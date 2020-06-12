@@ -13,4 +13,5 @@ PK-Sim Version 8.0.
 The model is distributed under the [GPLv2 License](https://github.com/Open-Systems-Pharmacology/Suite/blob/develop/LICENSE). 
 
 ### Reference
-[1] Hanke N, Türk D, Selzer D, Ishiguro N, Ebner T, Wiebe S, Müller F, Stopfer P, Nock V, Lehr T. A Comprehensive Whole‑Body Physiologically Based Pharmacokinetic Drug–Drug–Gene Interaction Model of Metformin and Cimetidine in Healthy Adults and Renally Impaired Individuals. Clinical Pharmacokinetics 2020, [https://doi.org/10.1007/s40262-020-00896-w](https://link.springer.com/article/10.1007/s40262-020-00896-w) 
+[1] Hanke N, Türk D, Selzer D, Ishiguro N, Ebner T, Wiebe S, Müller F, Stopfer P, Nock V, Lehr T. 
+A Comprehensive Whole‑Body Physiologically Based Pharmacokinetic Drug–Drug–Gene Interaction Model of Metformin and Cimetidine in Healthy Adults and Renally Impaired Individuals. Clinical Pharmacokinetics 2020, [https://doi.org/10.1007/s40262-020-00896-w](https://link.springer.com/article/10.1007/s40262-020-00896-w) 
