@@ -2,7 +2,7 @@
 Whole-body PBPK model of metformin (OCT2/MATE DDI victim drug)
 
 ### Repository files
-Within this repository, we distribute a whole-body PBPK model of metformin that has been carefully developed using 39 clinical studies of intravenous or oral administration, covering a broad dosing range (0.001–2550 mg). 
+Within this repository, we share a whole-body PBPK model of metformin that has been carefully developed using 39 clinical studies of intravenous or oral administration, covering a broad dosing range (0.001–2550 mg). 
 
 The PK-Sim project file contains simulation examples and the observed data of all clinical studies used for model development and evaluation. For further details, quantitative model evaluation, sensitivity analysis and extensive documentation please refer to [[1](#reference)].
 
