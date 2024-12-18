@@ -36258,7 +36258,11 @@
             {
               "Name": "Vmax",
               "Value": 17479.74,
-              "Unit": "µmol/l/min"
+              "Unit": "µmol/l/min",
+              "ValueOrigin": {
+                "Source": "ParameterIdentification",
+                "Method": "ParameterIdentification"
+              }
             },
             {
               "Name": "Km",
@@ -36383,7 +36387,7 @@
       ]
     },
     {
-      "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+      "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
       "FormulationType": "Formulation_Tablet_Weibull",
       "Parameters": [
         {
@@ -38207,8 +38211,16 @@
       "Name": "iv  250 mg, Tucker 1981, n=4",
       "Model": "4Comp",
       "ObservedData": [
+        "Tucker_1981, iv, 195 mg, ID1",
+        "Tucker_1981, iv 195 mg, Plasma, n=4",
         "Tucker_1981, iv 195 mg, Urine, n=4",
-        "Tucker_1981, iv 195 mg, Plasma, n=4"
+        "Tucker_1981, iv, 195 mg, ID2",
+        "Tucker_1981, iv, 195 mg, ID3",
+        "Tucker_1981, iv, 195 mg, ID4",
+        "Tucker_1981, iv, Urine, ID1",
+        "Tucker_1981, iv, Urine, ID2",
+        "Tucker_1981, iv, Urine, ID3",
+        "Tucker_1981, iv, Urine, ID4"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -38365,6 +38377,58 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Tucker_1981, iv 195 mg, Urine, n=4"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Tucker_1981, iv 195 mg, Plasma, n=4"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Tucker_1981, iv, 195 mg, ID1"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Tucker_1981, iv, 195 mg, ID2"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Tucker_1981, iv, 195 mg, ID3"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Tucker_1981, iv, 195 mg, ID4"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Tucker_1981, iv, Urine, ID1"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Tucker_1981, iv, Urine, ID2"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Tucker_1981, iv, Urine, ID3"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "iv  250 mg, Tucker 1981, n=4|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Tucker_1981, iv, Urine, ID4"
+        }
+      ],
       "Individual": "European_Tucker_1981",
       "Compounds": [
         {
@@ -38440,8 +38504,6 @@
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.05,
-              "Max": 0.95,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Dash",
               "Scaling": "Linear",
@@ -38481,13 +38543,105 @@
               }
             },
             {
+              "Name": "Tucker_1981, iv, 195 mg, ID1-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Tucker_1981, iv, 195 mg, ID1|Time",
+              "Y": "Tucker_1981, iv, 195 mg, ID1|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 6,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
               "Name": "Tucker_1981, iv 195 mg, Urine, n=4-Metformin-Kidney-Urine-Measurement",
               "X": "Tucker_1981, iv 195 mg, Urine, n=4|Time",
               "Y": "Tucker_1981, iv 195 mg, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement",
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 5,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, iv, 195 mg, ID2-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Tucker_1981, iv, 195 mg, ID2|Time",
+              "Y": "Tucker_1981, iv, 195 mg, ID2|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 7,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, iv, 195 mg, ID3-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Tucker_1981, iv, 195 mg, ID3|Time",
+              "Y": "Tucker_1981, iv, 195 mg, ID3|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 8,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, iv, 195 mg, ID4-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Tucker_1981, iv, 195 mg, ID4|Time",
+              "Y": "Tucker_1981, iv, 195 mg, ID4|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 9,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, iv, Urine, ID1-Metformin-Kidney-Urine-Measurement",
+              "X": "Tucker_1981, iv, Urine, ID1|Time",
+              "Y": "Tucker_1981, iv, Urine, ID1|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 10,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, iv, Urine, ID2-Metformin-Kidney-Urine-Measurement",
+              "X": "Tucker_1981, iv, Urine, ID2|Time",
+              "Y": "Tucker_1981, iv, Urine, ID2|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 11,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, iv, Urine, ID3-Metformin-Kidney-Urine-Measurement",
+              "X": "Tucker_1981, iv, Urine, ID3|Time",
+              "Y": "Tucker_1981, iv, Urine, ID3|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 12,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, iv, Urine, ID4-Metformin-Kidney-Urine-Measurement",
+              "X": "Tucker_1981, iv, Urine, ID4|Time",
+              "Y": "Tucker_1981, iv, Urine, ID4|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 13,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -38507,11 +38661,11 @@
           },
           "Settings": {
             "SideMarginsEnabled": true,
-            "LegendPosition": "Bottom",
+            "LegendPosition": "None",
             "BackColor": "#FFFFFF",
             "DiagramBackColor": "#FFFFFF"
           },
-          "OriginText": "Metformin-Model V11-V7\niv  250 mg, Tucker 1981, n=4\n2024-11-14 15:59"
+          "OriginText": "Metformin-Model V11\niv  250 mg, Tucker 1981, n=4\n2024-12-17 17:07"
         }
       ]
     },
@@ -38519,8 +38673,8 @@
       "Name": "po  500 mg, Tucker 1981, n=4, tab, fed",
       "Model": "4Comp",
       "ObservedData": [
-        "Tucker_1981, po 390 mg, fed, Urine, n=4",
-        "Tucker_1981, po 390 mg, fed, Plasma, n=4"
+        "Tucker_1981, po 390 mg, fed, Plasma, n=4",
+        "Tucker_1981, po 390 mg, fed, Urine, n=4"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -38552,7 +38706,7 @@
       ],
       "Parameters": [
         {
-          "Path": "Applications|_po, Tucker 1981,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Tucker 1981,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
@@ -38649,6 +38803,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Tucker 1981, n=4, tab, fed|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Tucker_1981, po 390 mg, fed, Urine, n=4"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Tucker 1981, n=4, tab, fed|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Tucker_1981, po 390 mg, fed, Plasma, n=4"
+        }
+      ],
       "Individual": "European_Tucker_1981",
       "Compounds": [
         {
@@ -38689,7 +38855,7 @@
             "Name": "_po, Tucker 1981,  390 mg, fed",
             "Formulations": [
               {
-                "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+                "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
                 "Key": "Formulation"
               }
             ]
@@ -38760,24 +38926,24 @@
               }
             },
             {
-              "Name": "Tucker_1981, po 390 mg, fed, Urine, n=4-Metformin-Kidney-Urine-Measurement",
-              "X": "Tucker_1981, po 390 mg, fed, Urine, n=4|Time",
-              "Y": "Tucker_1981, po 390 mg, fed, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement",
-              "CurveOptions": {
-                "yAxisType": "Y2",
-                "Color": "#FF8000",
-                "LegendIndex": 4,
-                "LineStyle": "None",
-                "Symbol": "Circle"
-              }
-            },
-            {
               "Name": "Tucker_1981, po 390 mg, fed, Plasma, n=4-Metformin-Peripheral Venous Blood-Plasma-Measurement",
               "X": "Tucker_1981, po 390 mg, fed, Plasma, n=4|Time",
               "Y": "Tucker_1981, po 390 mg, fed, Plasma, n=4|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
               "CurveOptions": {
                 "Color": "#0000FF",
                 "LegendIndex": 3,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Tucker_1981, po 390 mg, fed, Urine, n=4-Metformin-Kidney-Urine-Measurement",
+              "X": "Tucker_1981, po 390 mg, fed, Urine, n=4|Time",
+              "Y": "Tucker_1981, po 390 mg, fed, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FF8000",
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -38801,7 +38967,7 @@
             "BackColor": "#FFFFFF",
             "DiagramBackColor": "#FFFFFF"
           },
-          "OriginText": "Metformin-Model V11-V7\npo  500 mg, Tucker 1981, n=4, tab, fed\n2024-11-14 16:20"
+          "OriginText": "Metformin-Model V11\npo  500 mg, Tucker 1981, n=4, tab, fed\n2024-12-17 17:05"
         }
       ]
     },
@@ -38842,7 +39008,7 @@
       ],
       "Parameters": [
         {
-          "Path": "Applications|_po, Tucker 1981, 1169.9 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Tucker 1981, 1169.9 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
@@ -38939,6 +39105,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po 1500 mg, Tucker 1981, n=4, tab, fed|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Tucker_1981, po 1170 mg, fed, Urine, n=4"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po 1500 mg, Tucker 1981, n=4, tab, fed|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Tucker_1981, po 1170 mg, fed, Plasma, n=4"
+        }
+      ],
       "Individual": "European_Tucker_1981",
       "Compounds": [
         {
@@ -38979,7 +39157,7 @@
             "Name": "_po, Tucker 1981, 1169.9 mg, fed",
             "Formulations": [
               {
-                "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+                "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
                 "Key": "Formulation"
               }
             ]
@@ -39067,7 +39245,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -39255,6 +39433,38 @@
         "Organism|Muscle|Metformin|Tissue",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
         "Organism|Lumen|Feces|Metformin|Fraction excreted to feces"
+      ],
+      "OutputMappings": [
+        {
+          "Scaling": "Log",
+          "Path": "iv   0.0014 mg, Gormsen 2016, n=4|Organism|Muscle|Metformin|Tissue",
+          "ObservedData": "Gormsen_2016, iv 1.445 µg, Muscle, n=5"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv   0.0014 mg, Gormsen 2016, n=4|Organism|Liver|Metformin|Tissue (Liver)",
+          "ObservedData": "Gormsen_2016, iv 1.445 µg, Liver, n=5"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv   0.0014 mg, Gormsen 2016, n=4|Organism|Kidney|Metformin|Tissue",
+          "ObservedData": "Gormsen_2016, iv 1.445 µg, Kidney, n=5"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv   0.0014 mg, Gormsen 2016, n=4|Organism|ArterialBlood|Metformin|Whole Blood",
+          "ObservedData": "Gormsen_2016, iv 1.445 µg, Arterial Whole Blood, n=4"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv   0.0014 mg, Gormsen 2016, n=4|Organism|ArterialBlood|Plasma|Metformin|Concentration in container",
+          "ObservedData": "Gormsen_2016, iv 1.445 µg, Arterial Plasma, n=4"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv   0.0014 mg, Gormsen 2016, n=4|Organism|SmallIntestine|Metformin|Total Tissue (Small Intestine)",
+          "ObservedData": "Gormsen_2016, iv 1.445 µg, Intestines, n=5"
+        }
       ],
       "Individual": "European_Gormsen_2016",
       "Compounds": [
@@ -39466,7 +39676,7 @@
             "BackColor": "#FFFFFF",
             "DiagramBackColor": "#FFFFFF"
           },
-          "OriginText": "Metformin-Model V11-V7\niv   0.0014 mg, Gormsen 2016, n=4\n2024-11-15 09:09"
+          "OriginText": "Metformin-Model V11\niv   0.0014 mg, Gormsen 2016, n=4\n2024-12-17 17:07"
         }
       ]
     },
@@ -39649,6 +39859,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "iv 1000 mg, Sirtori 1978, n=5|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sirtori_1978, iv 723 mg, Urine, n=5"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv 1000 mg, Sirtori 1978, n=5|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sirtori_1978, iv 723 mg, Plasma, n=5"
+        }
+      ],
       "Individual": "European_Sirtori_1978",
       "Compounds": [
         {
@@ -39771,7 +39993,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 6,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -39795,7 +40017,7 @@
             "BackColor": "#FFFFFF",
             "DiagramBackColor": "#FFFFFF"
           },
-          "OriginText": "Metformin-Model V11-V7\niv 1000 mg, Sirtori 1978, n=5\n2024-11-14 15:59"
+          "OriginText": "Metformin-Model V11\niv 1000 mg, Sirtori 1978, n=5\n2024-12-17 17:07"
         }
       ]
     },
@@ -39955,6 +40177,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  10 mg, Stopfer 2018, n=24, sol, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Stopfer_2018, po 7.8 mg, solution, Urine, n=24"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  10 mg, Stopfer 2018, n=24, sol, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Stopfer_2018, po 7.8 mg, solution, Plasma, n=24"
+        }
+      ],
       "Individual": "European_Stopfer 2018",
       "Compounds": [
         {
@@ -40036,8 +40270,6 @@
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.05,
-              "Max": 0.95,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Dash",
               "Scaling": "Linear",
@@ -40115,8 +40347,8 @@
       "Name": "po  500 mg, Boehringer 2018, n=13, sol, fast",
       "Model": "4Comp",
       "ObservedData": [
-        "Boehringer_2018, po 390 mg, solution, Urine, n=13",
-        "Boehringer_2018, po 390 mg, solution, Plasma, n=13"
+        "Boehringer_2018, po 390 mg, solution, Plasma, n=13",
+        "Boehringer_2018, po 390 mg, solution, Urine, n=13"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -40267,6 +40499,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Boehringer 2018, n=13, sol, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Boehringer_2018, po 390 mg, solution, Urine, n=13"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Boehringer 2018, n=13, sol, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Boehringer_2018, po 390 mg, solution, Plasma, n=13"
+        }
+      ],
       "Individual": "European_Boehringer_2018",
       "Compounds": [
         {
@@ -40348,8 +40592,6 @@
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.05,
-              "Max": 0.95,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Dash",
               "Scaling": "Linear",
@@ -40395,7 +40637,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 6,
+                "LegendIndex": 7,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -40579,6 +40821,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Stopfer 2016, n=20, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Stopfer_2016, po 390 mg, Urine, n=20"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Stopfer 2016, n=20, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Stopfer_2016, po 390 mg, Plasma, n=20"
+        }
+      ],
       "Individual": "European_Stopfer 2016",
       "Compounds": [
         {
@@ -40655,13 +40909,11 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "",
+              "Unit": "%",
               "Dimension": "Fraction",
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.05,
-              "Max": 0.95,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Dash",
               "Scaling": "Linear",
@@ -40707,7 +40959,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 6,
+                "LegendIndex": 7,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -40740,7 +40992,13 @@
       "Model": "4Comp",
       "ObservedData": [
         "Pentikainen_1979, iv 390 mg, Plasma, n=3",
-        "Pentikainen_1979, iv 390 mg, Urine, n=3"
+        "Pentikainen_1979, 390 mg iv, KL",
+        "Pentikainen_1979, iv 390 mg, Urine, n=3",
+        "Pentikainen_1979, 390 mg iv, PP",
+        "Pentikainen_1979, 390 mg iv, SR",
+        "Pentikainen_1979, iv, Urine_KL",
+        "Pentikainen_1979, iv, Urine_PP",
+        "Pentikainen_1979, iv, Urine_SR"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -40919,6 +41177,48 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, iv 390 mg, Urine, n=3"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, iv 390 mg, Plasma, n=3"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg iv, KL"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg iv, PP"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg iv, SR"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, iv, Urine_KL"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, iv, Urine_PP"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "iv  500 mg, Pentikainen 1979, n=3|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, iv, Urine_SR"
+        }
+      ],
       "Individual": "European_Pentikäinen_1979_iv",
       "Compounds": [
         {
@@ -40970,6 +41270,8 @@
               "Type": "X",
               "GridLines": false,
               "Visible": true,
+              "Min": -3.17983437,
+              "Max": 42.1535,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "None",
               "Scaling": "Linear",
@@ -40981,8 +41283,8 @@
               "Type": "Y",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.01,
-              "Max": 100.0,
+              "Min": 0.0126811741,
+              "Max": 264.947266,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Solid",
               "Scaling": "Log",
@@ -40994,8 +41296,8 @@
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.05,
-              "Max": 0.95,
+              "Min": 2.37113982E-05,
+              "Max": 0.5878977,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Dash",
               "Scaling": "Linear",
@@ -41035,13 +41337,82 @@
               }
             },
             {
+              "Name": "Pentikainen_1979, 390 mg iv, KL-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg iv, KL|Time",
+              "Y": "Pentikainen_1979, 390 mg iv, KL|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 6,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
               "Name": "Pentikainen_1979, iv 390 mg, Urine, n=3-Metformin-Kidney-Urine-Measurement",
               "X": "Pentikainen_1979, iv 390 mg, Urine, n=3|Time",
               "Y": "Pentikainen_1979, iv 390 mg, Urine, n=3|ObservedData|Kidney|Urine|Metformin|Measurement",
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 5,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, 390 mg iv, PP-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg iv, PP|Time",
+              "Y": "Pentikainen_1979, 390 mg iv, PP|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 7,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, 390 mg iv, SR-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg iv, SR|Time",
+              "Y": "Pentikainen_1979, 390 mg iv, SR|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 8,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, iv, Urine_KL-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, iv, Urine_KL|Time",
+              "Y": "Pentikainen_1979, iv, Urine_KL|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 9,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, iv, Urine_PP-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, iv, Urine_PP|Time",
+              "Y": "Pentikainen_1979, iv, Urine_PP|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 10,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, iv, Urine_SR-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, iv, Urine_SR|Time",
+              "Y": "Pentikainen_1979, iv, Urine_SR|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 11,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -41061,7 +41432,7 @@
           },
           "Settings": {
             "SideMarginsEnabled": true,
-            "LegendPosition": "RightInside",
+            "LegendPosition": "None",
             "BackColor": "#FFFFFF",
             "DiagramBackColor": "#FFFFFF"
           },
@@ -41229,6 +41600,28 @@
         "Organism|Liver|Metformin|Tissue (Liver)",
         "Organism|Muscle|Metformin|Tissue"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Log",
+          "Path": "po   0.0008 mg, Gormsen 2016, n=3, sol, fast|Organism|ArterialBlood|Plasma|Metformin|Concentration in container",
+          "ObservedData": "Gormsen_2016, po 0.8556 µg, Arterial Plasma, n=3"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po   0.0008 mg, Gormsen 2016, n=3, sol, fast|Organism|Kidney|Metformin|Tissue",
+          "ObservedData": "Gormsen_2016, po 0.8556 µg, Kidney, n=5"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po   0.0008 mg, Gormsen 2016, n=3, sol, fast|Organism|Liver|Metformin|Tissue (Liver)",
+          "ObservedData": "Gormsen_2016, po 0.8556 µg, Liver, n=5"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po   0.0008 mg, Gormsen 2016, n=3, sol, fast|Organism|Muscle|Metformin|Tissue",
+          "ObservedData": "Gormsen_2016, po 0.8556 µg, Muscle, n=5"
+        }
+      ],
       "Individual": "European_Gormsen_2016",
       "Compounds": [
         {
@@ -41306,6 +41699,7 @@
             },
             {
               "Unit": "",
+              "Dimension": "Dimensionless",
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
@@ -41575,6 +41969,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po 2550 mg, Sambol 1996a, n=9, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1996a, po 1988.745 mg, Urine, n=9"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po 2550 mg, Sambol 1996a, n=9, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1996a, po 1988.745 mg, Plasma, n=9"
+        }
+      ],
       "Individual": "American_Sambol_1996a",
       "Compounds": [
         {
@@ -41699,7 +42105,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -41883,6 +42289,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po 1700 mg, Sambol 1996a, n=9, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1996a, po 1325.8 mg, Urine, n=9"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po 1700 mg, Sambol 1996a, n=9, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1996a, po 1325.8 mg, Plasma, n=9"
+        }
+      ],
       "Individual": "American_Sambol_1996a",
       "Compounds": [
         {
@@ -41990,24 +42408,24 @@
               }
             },
             {
-              "Name": "Sambol_1996a, po 1325.8 mg, Urine, n=9-Metformin-Kidney-Urine-Measurement",
-              "X": "Sambol_1996a, po 1325.8 mg, Urine, n=9|Time",
-              "Y": "Sambol_1996a, po 1325.8 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement",
-              "CurveOptions": {
-                "yAxisType": "Y2",
-                "Color": "#FF8000",
-                "LegendIndex": 3,
-                "LineStyle": "None",
-                "Symbol": "Circle"
-              }
-            },
-            {
               "Name": "Sambol_1996a, po 1325.8 mg, Plasma, n=9-Metformin-Peripheral Venous Blood-Plasma-Measurement",
               "X": "Sambol_1996a, po 1325.8 mg, Plasma, n=9|Time",
               "Y": "Sambol_1996a, po 1325.8 mg, Plasma, n=9|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
               "CurveOptions": {
                 "Color": "#0000FF",
                 "LegendIndex": 4,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Sambol_1996a, po 1325.8 mg, Urine, n=9-Metformin-Kidney-Urine-Measurement",
+              "X": "Sambol_1996a, po 1325.8 mg, Urine, n=9|Time",
+              "Y": "Sambol_1996a, po 1325.8 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FF8000",
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -42072,27 +42490,27 @@
       ],
       "Parameters": [
         {
-          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull + food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull and food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull + food)|Application_2|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull and food)|Application_2|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull + food)|Application_3|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull and food)|Application_3|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull + food)|Application_4|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull and food)|Application_4|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull + food)|Application_5|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin|Glucophage Tablet_Block 2008 (Weibull and food)|Application_5|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
@@ -42211,6 +42629,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  250 mg, Somogyi 1987, n=7, tab, fed|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Somogyi_1987, po 195 mg, fed, Urine, n=7"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  250 mg, Somogyi 1987, n=7, tab, fed|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Somogyi_1987, po 195 mg, fed, Plasma, n=7"
+        }
+      ],
       "Individual": "European_Somogyi_1987",
       "Compounds": [
         {
@@ -42251,7 +42681,7 @@
             "Name": "_po, Somogyi 1987_Metformin_Control_ DDI Cimetidine + Metformin",
             "Formulations": [
               {
-                "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+                "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
                 "Key": "Formulation"
               }
             ]
@@ -42307,18 +42737,6 @@
               }
             },
             {
-              "Name": "Somogyi_1987, po 195 mg, fed, Urine, n=7 1-Metformin-Kidney-Urine-Measurement",
-              "X": "Somogyi_1987, po 195 mg, fed, Urine, n=7|Time",
-              "Y": "Somogyi_1987, po 195 mg, fed, Urine, n=7|ObservedData|Kidney|Urine|Metformin|Measurement",
-              "CurveOptions": {
-                "yAxisType": "Y2",
-                "Color": "#F79646",
-                "LegendIndex": 6,
-                "LineStyle": "None",
-                "Symbol": "Circle"
-              }
-            },
-            {
               "Name": "po  250 mg, Somogyi 1987, n=7, tab, fed-Metformin-Kidney-Urine-Fraction excreted to urine",
               "X": "Time",
               "Y": "po  250 mg, Somogyi 1987, n=7, tab, fed|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
@@ -42336,6 +42754,18 @@
               "CurveOptions": {
                 "Color": "#0000FF",
                 "LegendIndex": 7,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Somogyi_1987, po 195 mg, fed, Urine, n=7-Metformin-Kidney-Urine-Measurement",
+              "X": "Somogyi_1987, po 195 mg, fed, Urine, n=7|Time",
+              "Y": "Somogyi_1987, po 195 mg, fed, Urine, n=7|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FF8000",
+                "LegendIndex": 8,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -42399,7 +42829,7 @@
       ],
       "Parameters": [
         {
-          "Path": "Applications|_po, Caille 1993,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Caille 1993,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
@@ -42536,7 +42966,7 @@
             "Name": "_po, Caille 1993,  390 mg, fed",
             "Formulations": [
               {
-                "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+                "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
                 "Key": "Formulation"
               }
             ]
@@ -42672,37 +43102,37 @@
       ],
       "Parameters": [
         {
-          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_2|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_2|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_3|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_3|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_4|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_4|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_5|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_5|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_6|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_6|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
         {
-          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_7|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, DiCicco 2000,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_7|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
@@ -42838,7 +43268,7 @@
             "Name": "_po, DiCicco 2000,  390 mg, fed",
             "Formulations": [
               {
-                "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+                "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
                 "Key": "Formulation"
               }
             ]
@@ -42922,8 +43352,8 @@
       "Name": "po  500 mg, Gusler 2001, n=14, tab, fed",
       "Model": "4Comp",
       "ObservedData": [
-        "Gusler_2001, po fed 390 mg, Urine, n=14",
-        "Gusler_2001, po 390 mg, fed, Plasma, n=14"
+        "Gusler_2001, po 390 mg, fed, Plasma, n=14",
+        "Gusler_2001, po fed 390 mg, Urine, n=14"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -42955,7 +43385,7 @@
       ],
       "Parameters": [
         {
-          "Path": "Applications|_po, Gusler 2001,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Gusler 2001,  390 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
@@ -43052,6 +43482,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Gusler 2001, n=14, tab, fed|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Gusler_2001, po fed 390 mg, Urine, n=14"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Gusler 2001, n=14, tab, fed|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Gusler_2001, po 390 mg, fed, Plasma, n=14"
+        }
+      ],
       "Individual": "American_Gusler_2001",
       "Compounds": [
         {
@@ -43092,7 +43534,7 @@
             "Name": "_po, Gusler 2001,  390 mg, fed",
             "Formulations": [
               {
-                "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+                "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
                 "Key": "Formulation"
               }
             ]
@@ -43126,7 +43568,7 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "",
+              "Unit": "%",
               "Dimension": "Fraction",
               "Type": "Y2",
               "GridLines": false,
@@ -43159,24 +43601,24 @@
               }
             },
             {
-              "Name": "Gusler_2001, po fed 390 mg, Urine, n=14-Metformin-Kidney-Urine-Measurement",
-              "X": "Gusler_2001, po fed 390 mg, Urine, n=14|Time",
-              "Y": "Gusler_2001, po fed 390 mg, Urine, n=14|ObservedData|Kidney|Urine|Metformin|Measurement",
-              "CurveOptions": {
-                "yAxisType": "Y2",
-                "Color": "#F79646",
-                "LegendIndex": 4,
-                "LineStyle": "None",
-                "Symbol": "Circle"
-              }
-            },
-            {
               "Name": "Gusler_2001, po 390 mg, fed, Plasma, n=14-Metformin-Peripheral Venous Blood-Plasma-Measurement",
               "X": "Gusler_2001, po 390 mg, fed, Plasma, n=14|Time",
               "Y": "Gusler_2001, po 390 mg, fed, Plasma, n=14|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
               "CurveOptions": {
                 "Color": "#0000FF",
                 "LegendIndex": 3,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Gusler_2001, po fed 390 mg, Urine, n=14-Metformin-Kidney-Urine-Measurement",
+              "X": "Gusler_2001, po fed 390 mg, Urine, n=14|Time",
+              "Y": "Gusler_2001, po fed 390 mg, Urine, n=14|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FF8000",
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -44151,6 +44593,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  850 mg, Sambol 1996a, n=9, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1996a, po 662.9 mg, Urine, n=9"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  850 mg, Sambol 1996a, n=9, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1996a, po 662.9 mg, Plasma, n=9"
+        }
+      ],
       "Individual": "American_Sambol_1996a",
       "Compounds": [
         {
@@ -44264,24 +44718,24 @@
               }
             },
             {
-              "Name": "Sambol_1996a, po 662.9 mg, Urine, n=9-Metformin-Kidney-Urine-Measurement",
-              "X": "Sambol_1996a, po 662.9 mg, Urine, n=9|Time",
-              "Y": "Sambol_1996a, po 662.9 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement",
-              "CurveOptions": {
-                "yAxisType": "Y2",
-                "Color": "#FF8000",
-                "LegendIndex": 4,
-                "LineStyle": "None",
-                "Symbol": "Circle"
-              }
-            },
-            {
               "Name": "Sambol_1996a, po 662.9 mg, Plasma, n=9-Metformin-Peripheral Venous Blood-Plasma-Measurement",
               "X": "Sambol_1996a, po 662.9 mg, Plasma, n=9|Time",
               "Y": "Sambol_1996a, po 662.9 mg, Plasma, n=9|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
               "CurveOptions": {
                 "Color": "#0000FF",
                 "LegendIndex": 3,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Sambol_1996a, po 662.9 mg, Urine, n=9-Metformin-Kidney-Urine-Measurement",
+              "X": "Sambol_1996a, po 662.9 mg, Urine, n=9|Time",
+              "Y": "Sambol_1996a, po 662.9 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FF8000",
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -44442,6 +44896,23 @@
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
         "Organism|PeripheralVenousBlood|Metformin|Whole Blood (Peripheral Venous Blood)"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  850 mg, Sambol 1995, WholeBlood, n=6, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1995, po 662.9 mg, Urine, n=6"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  850 mg, Sambol 1995, WholeBlood, n=6, tab, fast|Organism|PeripheralVenousBlood|Metformin|Whole Blood (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1995, po, 662.9 mg, Plasma, n=6"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  850 mg, Sambol 1995, WholeBlood, n=6, tab, fast|Organism|PeripheralVenousBlood|Metformin|Whole Blood (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1995, po, 662.9 mg, Whole blood, n=6"
+        }
+      ],
       "Individual": "American_Sambol_1995",
       "Compounds": [
         {
@@ -44590,7 +45061,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 6,
+                "LegendIndex": 9,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -45021,6 +45492,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po 1000 mg, Johansson 2014, n=14, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Johansson_2014, po 779.9 mg, Urine, n=14"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po 1000 mg, Johansson 2014, n=14, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Johansson_2014, po 779.9 mg, Plasma, n=14"
+        }
+      ],
       "Individual": "American_Johansson_2014",
       "Compounds": [
         {
@@ -45149,7 +45632,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 6,
+                "LegendIndex": 7,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -46599,8 +47082,18 @@
       "Name": "po  500 mg, Pentikainen 1979, n=5, tab, fast",
       "Model": "4Comp",
       "ObservedData": [
+        "Pentikainen_1979, po, Urine_KL",
+        "Pentikainen_1979, po 390 mg, Plasma, n=5",
         "Pentikainen_1979, po 390 mg, Urine, n=5",
-        "Pentikainen_1979, po 390 mg, Plasma, n=5"
+        "Pentikainen_1979, po, Urine_PP",
+        "Pentikainen_1979, po, Urine_RL",
+        "Pentikainen_1979, po, Urine_SR",
+        "Pentikainen_1979, po, Urine_TK",
+        "Pentikainen_1979, 390 mg po, TK",
+        "Pentikainen_1979, 390 mg po, SR",
+        "Pentikainen_1979, 390 mg po, RL",
+        "Pentikainen_1979, 390 mg po, PP",
+        "Pentikainen_1979, 390 mg po, KL"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -46751,6 +47244,68 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, po 390 mg, Urine, n=5"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, po 390 mg, Plasma, n=5"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, po, Urine_KL"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, po, Urine_PP"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, po, Urine_RL"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, po, Urine_SR"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Pentikainen_1979, po, Urine_TK"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg po, TK"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg po, SR"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg po, RL"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg po, PP"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Pentikainen 1979, n=5, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Pentikainen_1979, 390 mg po, KL"
+        }
+      ],
       "Individual": "European_Pentikäinen_1979_po",
       "Compounds": [
         {
@@ -46808,24 +47363,20 @@
               "Type": "X",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.0,
-              "Max": 50.0,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "None",
               "Scaling": "Linear",
               "NumberMode": "Normal"
             },
             {
-              "Unit": "µmol/l",
+              "Unit": "µg/ml",
               "Dimension": "Concentration (molar)",
               "Type": "Y",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.01,
-              "Max": 100.0,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Solid",
-              "Scaling": "Log",
+              "Scaling": "Linear",
               "NumberMode": "Normal"
             },
             {
@@ -46834,8 +47385,6 @@
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.05,
-              "Max": 0.95,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Dash",
               "Scaling": "Linear",
@@ -46864,13 +47413,13 @@
               }
             },
             {
-              "Name": "Pentikainen_1979, po 390 mg, Urine, n=5-Metformin-Kidney-Urine-Measurement",
-              "X": "Pentikainen_1979, po 390 mg, Urine, n=5|Time",
-              "Y": "Pentikainen_1979, po 390 mg, Urine, n=5|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "Name": "Pentikainen_1979, po, Urine_KL-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, po, Urine_KL|Time",
+              "Y": "Pentikainen_1979, po, Urine_KL|ObservedData|Kidney|Urine|Metformin|Measurement",
               "CurveOptions": {
                 "yAxisType": "Y2",
-                "Color": "#FF8000",
-                "LegendIndex": 14,
+                "Color": "#FAC08F",
+                "LegendIndex": 17,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -46881,7 +47430,122 @@
               "Y": "Pentikainen_1979, po 390 mg, Plasma, n=5|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
               "CurveOptions": {
                 "Color": "#0000FF",
-                "LegendIndex": 15,
+                "LegendIndex": 28,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, po 390 mg, Urine, n=5-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, po 390 mg, Urine, n=5|Time",
+              "Y": "Pentikainen_1979, po 390 mg, Urine, n=5|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FF8000",
+                "LegendIndex": 27,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, po, Urine_PP-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, po, Urine_PP|Time",
+              "Y": "Pentikainen_1979, po, Urine_PP|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 18,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, po, Urine_RL-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, po, Urine_RL|Time",
+              "Y": "Pentikainen_1979, po, Urine_RL|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 19,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, po, Urine_SR-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, po, Urine_SR|Time",
+              "Y": "Pentikainen_1979, po, Urine_SR|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 20,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, po, Urine_TK-Metformin-Kidney-Urine-Measurement",
+              "X": "Pentikainen_1979, po, Urine_TK|Time",
+              "Y": "Pentikainen_1979, po, Urine_TK|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FAC08F",
+                "LegendIndex": 21,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, 390 mg po, TK-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg po, TK|Time",
+              "Y": "Pentikainen_1979, 390 mg po, TK|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 22,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, 390 mg po, SR-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg po, SR|Time",
+              "Y": "Pentikainen_1979, 390 mg po, SR|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 23,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, 390 mg po, RL-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg po, RL|Time",
+              "Y": "Pentikainen_1979, 390 mg po, RL|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 24,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, 390 mg po, PP-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg po, PP|Time",
+              "Y": "Pentikainen_1979, 390 mg po, PP|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 25,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Pentikainen_1979, 390 mg po, KL-Metformin-Peripheral Venous Blood-Plasma-Measurement",
+              "X": "Pentikainen_1979, 390 mg po, KL|Time",
+              "Y": "Pentikainen_1979, 390 mg po, KL|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
+              "CurveOptions": {
+                "Color": "#DBE5F1",
+                "LegendIndex": 26,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -46901,7 +47565,7 @@
           },
           "Settings": {
             "SideMarginsEnabled": true,
-            "LegendPosition": "BottomInside",
+            "LegendPosition": "None",
             "BackColor": "#FFFFFF",
             "DiagramBackColor": "#FFFFFF"
           },
@@ -48217,8 +48881,8 @@
       "Name": "po  850 mg, Sambol 1996b, n=24, tab, fed",
       "Model": "4Comp",
       "ObservedData": [
-        "Sambol_1996b, po 662.9 mg, fed, Urine, n=21",
-        "Sambol_1996b, po 662.9 mg, fed, Plasma, n=24"
+        "Sambol_1996b, po 662.9 mg, fed, Plasma, n=24",
+        "Sambol_1996b, po 662.9 mg, fed, Urine, n=21"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -48250,7 +48914,7 @@
       ],
       "Parameters": [
         {
-          "Path": "Applications|_po, Sambol 1996b,  662.9 mg, fed|Glucophage Tablet_Block 2008 (Weibull + food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Path": "Applications|_po, Sambol 1996b,  662.9 mg, fed|Glucophage Tablet_Block 2008 (Weibull and food)|Application_1|ProtocolSchemaItem|Volume of water/body weight",
           "Value": 3.5,
           "Unit": "ml/kg"
         },
@@ -48347,6 +49011,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  850 mg, Sambol 1996b, n=24, tab, fed|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1996b, po 662.9 mg, fed, Urine, n=21"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  850 mg, Sambol 1996b, n=24, tab, fed|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1996b, po 662.9 mg, fed, Plasma, n=24"
+        }
+      ],
       "Individual": "American_Sambol_1996b",
       "Compounds": [
         {
@@ -48387,7 +49063,7 @@
             "Name": "_po, Sambol 1996b,  662.9 mg, fed",
             "Formulations": [
               {
-                "Name": "Glucophage Tablet_Block 2008 (Weibull + food)",
+                "Name": "Glucophage Tablet_Block 2008 (Weibull and food)",
                 "Key": "Formulation"
               }
             ]
@@ -48475,7 +49151,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -48507,8 +49183,8 @@
       "Name": "po  850 mg, Sambol 1996b, n=24, tab, fast",
       "Model": "4Comp",
       "ObservedData": [
-        "Sambol_1996b, po 662.9 mg, Urine, n=21",
-        "Sambol_1996b, po 662.9 mg, Plasma, n=24"
+        "Sambol_1996b, po 662.9 mg, Plasma, n=24",
+        "Sambol_1996b, po 662.9 mg, Urine, n=21"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -48637,6 +49313,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Log",
+          "Path": "po  850 mg, Sambol 1996b, n=24, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1996b, po 662.9 mg, Plasma, n=24"
+        },
+        {
+          "Scaling": "Linear",
+          "Path": "po  850 mg, Sambol 1996b, n=24, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1996b, po 662.9 mg, Urine, n=21"
+        }
+      ],
       "Individual": "American_Sambol_1996b",
       "Compounds": [
         {
@@ -48713,13 +49401,11 @@
               "NumberMode": "Normal"
             },
             {
-              "Unit": "",
+              "Unit": "%",
               "Dimension": "Fraction",
               "Type": "Y2",
               "GridLines": false,
               "Visible": true,
-              "Min": 0.05,
-              "Max": 0.95,
               "DefaultColor": "#FFFFFF",
               "DefaultLineStyle": "Dash",
               "Scaling": "Linear",
@@ -48754,7 +49440,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 6,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -48765,7 +49451,7 @@
               "Y": "Sambol_1996b, po 662.9 mg, Plasma, n=24|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
               "CurveOptions": {
                 "Color": "#0000FF",
-                "LegendIndex": 3,
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -48797,8 +49483,8 @@
       "Name": "po  850 mg, Sambol 1996b, n=24, sol, fast",
       "Model": "4Comp",
       "ObservedData": [
-        "Sambol_1996b, po 662.9 mg, solution, Urine, n=24",
-        "Sambol_1996b, po 662.9 mg, solution, Plasma, n=24"
+        "Sambol_1996b, po 662.9 mg, solution, Plasma, n=24",
+        "Sambol_1996b, po 662.9 mg, solution, Urine, n=24"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -48949,6 +49635,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  850 mg, Sambol 1996b, n=24, sol, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1996b, po 662.9 mg, solution, Urine, n=24"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  850 mg, Sambol 1996b, n=24, sol, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1996b, po 662.9 mg, solution, Plasma, n=24"
+        }
+      ],
       "Individual": "American_Sambol_1996b",
       "Compounds": [
         {
@@ -49077,7 +49775,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 4,
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -49109,8 +49807,8 @@
       "Name": "po  500 mg, Sambol 1996b, n=24, tab, fast",
       "Model": "4Comp",
       "ObservedData": [
-        "Sambol_1996b, po 390 mg, Urine, n=21",
-        "Sambol_1996b, po 390 mg, Plasma, n=24"
+        "Sambol_1996b, po 390 mg, Plasma, n=24",
+        "Sambol_1996b, po 390 mg, Urine, n=21"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -49238,6 +49936,18 @@
       "OutputSelections": [
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
+      ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Sambol 1996b, n=24, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Sambol_1996b, po 390 mg, Urine, n=21"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Sambol 1996b, n=24, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Sambol_1996b, po 390 mg, Plasma, n=24"
+        }
       ],
       "Individual": "American_Sambol_1996b",
       "Compounds": [
@@ -49367,7 +50077,7 @@
               "CurveOptions": {
                 "yAxisType": "Y2",
                 "Color": "#FF8000",
-                "LegendIndex": 3,
+                "LegendIndex": 5,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -49399,8 +50109,8 @@
       "Name": "po  500 mg, Wang 2008, n=6, tab, fast",
       "Model": "4Comp",
       "ObservedData": [
-        "Wang_2008, po 390 mg, Urine, n=6",
-        "Wang_2008, po 390 mg, Plasma, n=6"
+        "Wang_2008, po 390 mg, Plasma, n=6",
+        "Wang_2008, po 390 mg, Urine, n=6"
       ],
       "Solver": {},
       "OutputSchema": [
@@ -49551,6 +50261,18 @@
         "Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
         "Organism|Kidney|Urine|Metformin|Fraction excreted to urine"
       ],
+      "OutputMappings": [
+        {
+          "Scaling": "Linear",
+          "Path": "po  500 mg, Wang 2008, n=6, tab, fast|Organism|Kidney|Urine|Metformin|Fraction excreted to urine",
+          "ObservedData": "Wang_2008, po 390 mg, Urine, n=6"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "po  500 mg, Wang 2008, n=6, tab, fast|Organism|PeripheralVenousBlood|Metformin|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Wang_2008, po 390 mg, Plasma, n=6"
+        }
+      ],
       "Individual": "European_Wang 2008",
       "Compounds": [
         {
@@ -49664,24 +50386,24 @@
               }
             },
             {
-              "Name": "Wang_2008, po 390 mg, Urine, n=6-Metformin-Kidney-Urine-Measurement",
-              "X": "Wang_2008, po 390 mg, Urine, n=6|Time",
-              "Y": "Wang_2008, po 390 mg, Urine, n=6|ObservedData|Kidney|Urine|Metformin|Measurement",
-              "CurveOptions": {
-                "yAxisType": "Y2",
-                "Color": "#FF8000",
-                "LegendIndex": 6,
-                "LineStyle": "None",
-                "Symbol": "Circle"
-              }
-            },
-            {
               "Name": "Wang_2008, po 390 mg, Plasma, n=6-Metformin-Peripheral Venous Blood-Plasma-Measurement",
               "X": "Wang_2008, po 390 mg, Plasma, n=6|Time",
               "Y": "Wang_2008, po 390 mg, Plasma, n=6|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement",
               "CurveOptions": {
                 "Color": "#0000FF",
                 "LegendIndex": 7,
+                "LineStyle": "None",
+                "Symbol": "Circle"
+              }
+            },
+            {
+              "Name": "Wang_2008, po 390 mg, Urine, n=6-Metformin-Kidney-Urine-Measurement",
+              "X": "Wang_2008, po 390 mg, Urine, n=6|Time",
+              "Y": "Wang_2008, po 390 mg, Urine, n=6|ObservedData|Kidney|Urine|Metformin|Measurement",
+              "CurveOptions": {
+                "yAxisType": "Y2",
+                "Color": "#FF8000",
+                "LegendIndex": 8,
                 "LineStyle": "None",
                 "Symbol": "Circle"
               }
@@ -49798,7 +50520,7 @@
             0.0456359
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -49953,11 +50675,6 @@
       "Name": "Sambol_1996b, po 390 mg, Plasma, n=24",
       "ExtendedProperties": [
         {
-          "Name": "Sheet",
-          "Value": "Sambol_1996b, po 390 mg, Plas",
-          "Type": "String"
-        },
-        {
           "Name": "Molecule",
           "Value": "Metformin",
           "Type": "String"
@@ -50003,7 +50720,7 @@
             0.01741824
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -50082,7 +50799,7 @@
             0.00727489
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -50113,7 +50830,7 @@
       }
     },
     {
-      "Name": "Pentikainen_1979, po 390 mg, Urine, n=5",
+      "Name": "Pentikainen_1979, 390 mg iv, PP",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -50127,12 +50844,12 @@
         },
         {
           "Name": "Organ",
-          "Value": "Kidney",
+          "Value": "Peripheral Venous Blood",
           "Type": "String"
         },
         {
           "Name": "Compartment",
-          "Value": "Urine",
+          "Value": "Plasma",
           "Type": "String"
         }
       ],
@@ -50140,7 +50857,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Pentikainen_1979, po 390 mg, Urine, n=5|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Pentikainen_1979, 390 mg iv, PP|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -50148,24 +50865,33 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.0653806,
-            0.154642,
-            0.302034,
-            0.367992,
-            0.414497,
-            0.439922,
-            0.455292,
-            0.497214,
-            0.506129,
-            0.511972
+            33.610302,
+            26.81121,
+            18.145731,
+            13.4983206,
+            10.7677193,
+            9.479808,
+            7.28755426,
+            5.398861,
+            3.270203,
+            2.05546,
+            1.151524,
+            0.7479707,
+            0.483850777,
+            0.3091608,
+            0.2216295,
+            0.1641905,
+            0.1040523,
+            0.05347342
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Pentikainen_1979, po 390 mg, Urine, n=5|Time",
+          "Path": "Pentikainen_1979, 390 mg iv, PP|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -50173,16 +50899,24 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
+          0.0584515,
+          0.09681875,
+          0.13607,
+          0.2026768,
+          0.30605948,
+          0.3810481,
+          0.5,
+          0.75,
           1.0,
+          1.5,
           2.0,
-          4.0,
+          3.0,
+          4.000764,
+          5.0,
           6.0,
+          7.0,
           8.0,
-          10.0,
-          12.0,
-          24.0,
-          32.0,
-          48.0
+          10.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -50331,7 +51065,7 @@
             0.7384927,
             0.845211267,
             0.8921676,
-            0.7897176,
+            0.789717555,
             0.606161654,
             0.490905583,
             0.4311432,
@@ -50353,7 +51087,7 @@
             0.0512249321,
             0.04695619,
             0.0426874422,
-            0.0384187
+            0.0384187028
           ],
           "Dimension": "Concentration (mass)",
           "Unit": "ng/ml"
@@ -50481,7 +51215,7 @@
             0.106579304
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -50513,7 +51247,7 @@
       }
     },
     {
-      "Name": "Stopfer_2016, po 390 mg, Urine, n=20",
+      "Name": "Tucker_1981, iv, 195 mg, ID1",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -50527,12 +51261,12 @@
         },
         {
           "Name": "Organ",
-          "Value": "Kidney",
+          "Value": "Peripheral Venous Blood",
           "Type": "String"
         },
         {
           "Name": "Compartment",
-          "Value": "Urine",
+          "Value": "Plasma",
           "Type": "String"
         }
       ],
@@ -50540,7 +51274,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Stopfer_2016, po 390 mg, Urine, n=20|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Tucker_1981, iv, 195 mg, ID1|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -50548,18 +51282,23 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.3099,
-            0.5214,
-            0.6027,
-            0.6494
+            27.342,
+            2.674684,
+            1.682091,
+            0.733655632,
+            0.2319148,
+            0.1206175,
+            0.07375929,
+            0.0297141485
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Concentration (mass)",
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Stopfer_2016, po 390 mg, Urine, n=20|Time",
+          "Path": "Tucker_1981, iv, 195 mg, ID1|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -50567,10 +51306,14 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          4.0,
-          8.0,
-          12.0,
-          24.0
+          0.25,
+          0.75,
+          1.25,
+          2.25,
+          4.25,
+          6.25,
+          8.25,
+          12.25
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -50624,7 +51367,7 @@
             0.008545818,
             0.008189742,
             0.008011704,
-            0.007121515,
+            0.00712151546,
             0.007655629,
             0.007299553,
             0.006053288,
@@ -50734,7 +51477,7 @@
             0.01630114,
             0.01582169,
             0.0148628,
-            0.01438336,
+            0.0143833607,
             0.01198613,
             0.01150668,
             0.01102724,
@@ -50793,7 +51536,7 @@
       }
     },
     {
-      "Name": "Sambol_1995, po 662.9 mg, Urine, n=6",
+      "Name": "Sambol_1996a, po 662.9 mg, Urine, n=9",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -50820,7 +51563,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1995, po 662.9 mg, Urine, n=6|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Sambol_1996a, po 662.9 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -50828,15 +51571,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.436
+            0.4268235
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1995, po 662.9 mg, Urine, n=6|Time",
+          "Path": "Sambol_1996a, po 662.9 mg, Urine, n=9|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -50844,7 +51587,7 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          72.0
+          48.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -50889,7 +51632,7 @@
             0.315164179
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -50958,7 +51701,7 @@
             0.3795733
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51178,20 +51921,20 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.6796491,
-            1.585848,
-            1.812398,
-            1.812398,
-            2.945146,
-            2.831871,
-            3.398245,
-            3.398245,
-            3.171696,
-            3.284971,
-            3.624795
+            6.796491E-07,
+            1.58584794E-06,
+            1.812398E-06,
+            1.812398E-06,
+            2.945146E-06,
+            2.831871E-06,
+            3.398245E-06,
+            3.398245E-06,
+            3.17169588E-06,
+            3.284971E-06,
+            3.624795E-06
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "pg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51257,30 +52000,30 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            6.909766,
-            7.70269,
-            7.92923975,
-            9.061988,
-            11.2142105,
-            13.2531595,
-            17.89743,
-            19.59655,
-            21.9753189,
-            26.27976,
-            27.75234,
-            29.22491,
-            33.3028069,
-            35.22848,
-            38.96655,
-            39.41965,
-            39.64619,
-            44.17719,
-            39.64619,
-            36.58778,
-            34.209
+            6.909766E-06,
+            7.70269E-06,
+            7.92923947E-06,
+            9.061988E-06,
+            1.121421E-05,
+            1.32531595E-05,
+            1.789743E-05,
+            1.959655E-05,
+            2.19753183E-05,
+            2.627976E-05,
+            2.775234E-05,
+            2.92249115E-05,
+            3.33028074E-05,
+            3.522848E-05,
+            3.89665474E-05,
+            3.941965E-05,
+            3.96461874E-05,
+            4.41771881E-05,
+            3.96461874E-05,
+            3.65877822E-05,
+            3.4209E-05
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "pg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51356,27 +52099,27 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            2.378772,
-            2.49204683,
-            2.831871,
-            2.945146,
-            3.398245,
-            3.851345,
-            3.851345,
-            3.96461987,
-            4.077895,
-            5.323918,
-            4.757544,
-            5.21064329,
-            5.777017,
-            6.343391,
-            6.569941,
-            5.663743,
-            5.437193,
-            6.79649067
+            2.378772E-06,
+            2.49204686E-06,
+            2.831871E-06,
+            2.945146E-06,
+            3.398245E-06,
+            3.851345E-06,
+            3.851345E-06,
+            3.96461974E-06,
+            4.077895E-06,
+            5.323918E-06,
+            4.757544E-06,
+            5.210643E-06,
+            5.777017E-06,
+            6.34339131E-06,
+            6.569941E-06,
+            5.66374274E-06,
+            5.43719261E-06,
+            6.79649065E-06
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "pg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51449,30 +52192,30 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            5.890292,
-            6.569941,
-            8.38233948,
-            9.968187,
-            12.46023,
-            15.06555,
-            17.21778,
-            19.14345,
-            21.74877,
-            22.7682514,
-            23.78772,
-            24.92047,
-            25.26029,
-            25.93994,
-            26.39304,
-            25.033741,
-            26.39304,
-            27.86561,
-            24.5806389,
-            24.0142689,
-            24.80719
+            5.890292E-06,
+            6.569941E-06,
+            8.382339E-06,
+            9.968187E-06,
+            1.246023E-05,
+            1.506555E-05,
+            1.72177788E-05,
+            1.91434483E-05,
+            2.17487686E-05,
+            2.276825E-05,
+            2.378772E-05,
+            2.49204677E-05,
+            2.52602913E-05,
+            2.593994E-05,
+            2.639304E-05,
+            2.503374E-05,
+            2.639304E-05,
+            2.78656116E-05,
+            2.458064E-05,
+            2.4014269E-05,
+            2.480719E-05
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "pg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51591,7 +52334,7 @@
             0.0249663
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51674,7 +52417,7 @@
             0.0235891
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51708,7 +52451,7 @@
       }
     },
     {
-      "Name": "Sambol_1996a, po 662.9 mg, Urine, n=9",
+      "Name": "Sambol_1996b, po 390 mg, Urine, n=21",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -51735,7 +52478,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1996a, po 662.9 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Sambol_1996b, po 390 mg, Urine, n=21|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -51743,15 +52486,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.4268235
+            0.453
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1996a, po 662.9 mg, Urine, n=9|Time",
+          "Path": "Sambol_1996b, po 390 mg, Urine, n=21|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -51766,7 +52509,7 @@
       }
     },
     {
-      "Name": "Sambol_1996a, po 1988.745 mg, Urine, n=9",
+      "Name": "Sambol_1996b, po 662.9 mg, Urine, n=21",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -51793,7 +52536,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1996a, po 1988.745 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Sambol_1996b, po 662.9 mg, Urine, n=21|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -51801,15 +52544,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.2478824
+            0.387
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1996a, po 1988.745 mg, Urine, n=9|Time",
+          "Path": "Sambol_1996b, po 662.9 mg, Urine, n=21|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -51874,7 +52617,7 @@
             0.03849446
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -51907,7 +52650,7 @@
       }
     },
     {
-      "Name": "Sambol_1996a, po 1325.8 mg, Urine, n=9",
+      "Name": "Sambol_1996b, po 662.9 mg, solution, Urine, n=24",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -51934,7 +52677,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1996a, po 1325.8 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Sambol_1996b, po 662.9 mg, solution, Urine, n=24|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -51942,15 +52685,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.2856471
+            0.38
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1996a, po 1325.8 mg, Urine, n=9|Time",
+          "Path": "Sambol_1996b, po 662.9 mg, solution, Urine, n=24|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -52016,7 +52759,7 @@
             0.0316000432
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -52050,13 +52793,8 @@
       }
     },
     {
-      "Name": "Sambol_1996b, po 662.9 mg, Urine, n=21",
+      "Name": "Somogyi_1987, po 195 mg, fed, Urine, n=7",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Sambol_1996b, po 662.9 mg, Ur",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -52082,7 +52820,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1996b, po 662.9 mg, Urine, n=21|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Somogyi_1987, po 195 mg, fed, Urine, n=7|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -52090,15 +52828,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.387
+            0.5
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1996b, po 662.9 mg, Urine, n=21|Time",
+          "Path": "Somogyi_1987, po 195 mg, fed, Urine, n=7|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -52106,7 +52844,7 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          48.0
+          120.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -52115,11 +52853,6 @@
     {
       "Name": "Sambol_1996b, po 662.9 mg, Plasma, n=24",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Sambol_1996b, po 662.9 mg, Pl",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -52165,7 +52898,7 @@
             0.0317792
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -52195,13 +52928,8 @@
       }
     },
     {
-      "Name": "Sambol_1996b, po 662.9 mg, solution, Urine, n=24",
+      "Name": "Tucker_1981, iv, 195 mg, ID4",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Sambol_1996b, po 662.9 mg, so",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -52214,12 +52942,12 @@
         },
         {
           "Name": "Organ",
-          "Value": "Kidney",
+          "Value": "Peripheral Venous Blood",
           "Type": "String"
         },
         {
           "Name": "Compartment",
-          "Value": "Urine",
+          "Value": "Plasma",
           "Type": "String"
         }
       ],
@@ -52227,7 +52955,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1996b, po 662.9 mg, solution, Urine, n=24|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Tucker_1981, iv, 195 mg, ID4|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -52235,15 +52963,23 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.38
+            12.604,
+            2.381743,
+            1.079161,
+            0.4858266,
+            0.1485856,
+            0.0731091648,
+            0.05049019,
+            0.032200478
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Concentration (mass)",
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1996b, po 662.9 mg, solution, Urine, n=24|Time",
+          "Path": "Tucker_1981, iv, 195 mg, ID4|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -52251,14 +52987,21 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          48.0
+          0.25,
+          0.75,
+          1.25,
+          2.25,
+          4.25,
+          6.25,
+          8.25,
+          12.25
         ],
         "Dimension": "Time",
         "Unit": "h"
       }
     },
     {
-      "Name": "Boehringer_2018, po 390 mg, solution, Urine, n=13",
+      "Name": "Gusler_2001, po fed 390 mg, Urine, n=14",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -52285,7 +53028,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Boehringer_2018, po 390 mg, solution, Urine, n=13|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Gusler_2001, po fed 390 mg, Urine, n=14|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -52293,19 +53036,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.2720745,
-            0.4668131,
-            0.5310118,
-            0.5651665,
-            0.542113
+            0.288
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Boehringer_2018, po 390 mg, solution, Urine, n=13|Time",
+          "Path": "Gusler_2001, po fed 390 mg, Urine, n=14|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -52313,11 +53052,7 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          4.0,
-          8.0,
-          12.0,
-          24.0,
-          36.0
+          72.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -52402,7 +53137,7 @@
             0.0554621927
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -52506,7 +53241,7 @@
             0.126502991
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -52574,9 +53309,9 @@
             0.1253033,
             0.1368921,
             0.1441351,
-            0.1383407,
+            0.138340712,
             0.1332706,
-            0.1310977,
+            0.131097689,
             0.1253033,
             0.1202333,
             0.114438906,
@@ -52724,7 +53459,7 @@
             0.024149999
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -52835,7 +53570,7 @@
             0.0352941
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -52867,7 +53602,7 @@
       }
     },
     {
-      "Name": "Sambol_1996b, po 662.9 mg, fed, Urine, n=21",
+      "Name": "Stopfer_2018, po 7.8 mg, solution, Urine, n=24",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -52894,7 +53629,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1996b, po 662.9 mg, fed, Urine, n=21|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Stopfer_2018, po 7.8 mg, solution, Urine, n=24|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -52902,15 +53637,18 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.325
+            0.4255,
+            0.644,
+            0.7046,
+            0.7399
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1996b, po 662.9 mg, fed, Urine, n=21|Time",
+          "Path": "Stopfer_2018, po 7.8 mg, solution, Urine, n=24|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -52918,7 +53656,10 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          48.0
+          4.0,
+          8.0,
+          12.0,
+          24.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -52972,7 +53713,7 @@
             0.0299618114
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -53051,7 +53792,7 @@
             0.0100757005
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -53083,7 +53824,7 @@
       }
     },
     {
-      "Name": "Somogyi_1987, po 195 mg, fed, Urine, n=7",
+      "Name": "Tucker_1981, po 1170 mg, fed, Urine, n=4",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -53110,7 +53851,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Somogyi_1987, po 195 mg, fed, Urine, n=7|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Tucker_1981, po 1170 mg, fed, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -53118,15 +53859,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.5
+            0.379
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Somogyi_1987, po 195 mg, fed, Urine, n=7|Time",
+          "Path": "Tucker_1981, po 1170 mg, fed, Urine, n=4|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -53134,7 +53875,7 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          120.0
+          72.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -53143,11 +53884,6 @@
     {
       "Name": "Wang_2008, po 390 mg, Plasma, n=6",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Wang_2008, po 390 mg, Plasma,",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -53224,7 +53960,7 @@
             0.0721393
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -53329,7 +54065,7 @@
       }
     },
     {
-      "Name": "Gusler_2001, po fed 390 mg, Urine, n=14",
+      "Name": "Johansson_2014, po 779.9 mg, Urine, n=14",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -53356,7 +54092,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Gusler_2001, po fed 390 mg, Urine, n=14|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Johansson_2014, po 779.9 mg, Urine, n=14|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -53364,15 +54100,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.288
+            0.379
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Gusler_2001, po fed 390 mg, Urine, n=14|Time",
+          "Path": "Johansson_2014, po 779.9 mg, Urine, n=14|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -53380,20 +54116,15 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          72.0
+          48.0
         ],
         "Dimension": "Time",
         "Unit": "h"
       }
     },
     {
-      "Name": "Stopfer_2018, po 7.8 mg, solution, Urine, n=24",
+      "Name": "Tucker_1981, iv 195 mg, Urine, n=4",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Stopfer_2018, po 7.8 mg, solu",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -53419,7 +54150,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Stopfer_2018, po 7.8 mg, solution, Urine, n=24|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Tucker_1981, iv 195 mg, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -53427,18 +54158,17 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.4255,
-            0.644,
-            0.7046,
-            0.7399
+            0.751942,
+            0.785168,
+            0.79
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Stopfer_2018, po 7.8 mg, solution, Urine, n=24|Time",
+          "Path": "Tucker_1981, iv 195 mg, Urine, n=4|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -53446,10 +54176,9 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          4.0,
-          8.0,
-          12.0,
-          24.0
+          5.0,
+          18.0,
+          60.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -53569,13 +54298,8 @@
       }
     },
     {
-      "Name": "Sambol_1996b, po 390 mg, Urine, n=21",
+      "Name": "Sirtori_1978, iv 723 mg, Urine, n=5",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Sambol_1996b, po 390 mg, Urin",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -53601,7 +54325,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sambol_1996b, po 390 mg, Urine, n=21|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Sirtori_1978, iv 723 mg, Urine, n=5|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -53609,15 +54333,15 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.453
+            0.76
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sambol_1996b, po 390 mg, Urine, n=21|Time",
+          "Path": "Sirtori_1978, iv 723 mg, Urine, n=5|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -53837,7 +54561,7 @@
             0.10931
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -53947,7 +54671,7 @@
             0.107754
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -54055,7 +54779,7 @@
             0.142273
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -54164,7 +54888,7 @@
             0.11307
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -54278,7 +55002,7 @@
             0.203275
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -54388,7 +55112,7 @@
             0.0459026
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -54470,7 +55194,7 @@
             0.0538988
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -54561,7 +55285,7 @@
             0.05476448
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -54601,13 +55325,8 @@
       }
     },
     {
-      "Name": "Wang_2008, po 390 mg, Urine, n=6",
+      "Name": "Stopfer_2016, po 390 mg, Urine, n=20",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Wang_2008, po 390 mg, Urine, ",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -54633,7 +55352,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Wang_2008, po 390 mg, Urine, n=6|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Stopfer_2016, po 390 mg, Urine, n=20|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -54641,15 +55360,18 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.482
+            0.3099,
+            0.5214,
+            0.6027,
+            0.6494
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Wang_2008, po 390 mg, Urine, n=6|Time",
+          "Path": "Stopfer_2016, po 390 mg, Urine, n=20|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -54657,7 +55379,10 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          170.0
+          4.0,
+          8.0,
+          12.0,
+          24.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -54666,11 +55391,6 @@
     {
       "Name": "Hibma_2016, po 779.9 mg + 662.9 mg, Urine, n=12",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Hibma_2016, po 779.9 mg + 662",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -54713,16 +55433,16 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            274.761,
-            365.41098,
-            449.982,
-            529.028,
-            563.682,
-            589.703,
-            621.347961
+            0.000274761,
+            0.000365411,
+            0.000449982,
+            0.000529028,
+            0.000563682,
+            0.000589703,
+            0.000621348
           ],
           "Dimension": "Mass",
-          "Unit": "mg"
+          "Unit": "kg"
         }
       ],
       "BaseGrid": {
@@ -54790,7 +55510,7 @@
             0.449570984,
             0.3323956,
             0.2510902,
-            0.1984809,
+            0.198480889,
             0.165002212,
             0.1434801,
             0.124349408,
@@ -54852,7 +55572,7 @@
       }
     },
     {
-      "Name": "Sirtori_1978, iv 723 mg, Urine, n=5",
+      "Name": "Tucker_1981, po 390 mg, fed, Urine, n=4",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -54879,7 +55599,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Sirtori_1978, iv 723 mg, Urine, n=5|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Tucker_1981, po 390 mg, fed, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -54887,15 +55607,16 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.76
+            0.31,
+            0.496
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Sirtori_1978, iv 723 mg, Urine, n=5|Time",
+          "Path": "Tucker_1981, po 390 mg, fed, Urine, n=4|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -54903,7 +55624,8 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          48.0
+          5.0,
+          36.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -55028,13 +55750,8 @@
       }
     },
     {
-      "Name": "Johansson_2014, po 779.9 mg, Urine, n=14",
+      "Name": "Pentikainen_1979, iv 390 mg, Urine, n=3",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Johansson_2014, po 779.9 mg, ",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -55060,7 +55777,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Johansson_2014, po 779.9 mg, Urine, n=14|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Pentikainen_1979, iv 390 mg, Urine, n=3|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -55068,15 +55785,24 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.379
+            0.610635,
+            0.825424,
+            0.919936,
+            0.955084,
+            0.969476,
+            0.976091,
+            0.986592,
+            0.99056,
+            0.995908,
+            0.999813
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Johansson_2014, po 779.9 mg, Urine, n=14|Time",
+          "Path": "Pentikainen_1979, iv 390 mg, Urine, n=3|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -55084,6 +55810,15 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
+          1.0,
+          2.0,
+          4.0,
+          6.0,
+          8.0,
+          10.0,
+          12.0,
+          24.0,
+          32.0,
           48.0
         ],
         "Dimension": "Time",
@@ -55093,11 +55828,6 @@
     {
       "Name": "Sambol_1996b, po 662.9 mg, solution, Plasma, n=24",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Sambol_1996b, po 662.9 mg, so",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -55144,7 +55874,7 @@
             0.03031678
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -55175,13 +55905,8 @@
       }
     },
     {
-      "Name": "Tucker_1981, iv 195 mg, Urine, n=4",
+      "Name": "Tucker_1981, iv, 195 mg, ID3",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Tucker_1981, iv 195 mg, Urine",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -55194,12 +55919,12 @@
         },
         {
           "Name": "Organ",
-          "Value": "Kidney",
+          "Value": "Peripheral Venous Blood",
           "Type": "String"
         },
         {
           "Name": "Compartment",
-          "Value": "Urine",
+          "Value": "Plasma",
           "Type": "String"
         }
       ],
@@ -55207,7 +55932,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Tucker_1981, iv 195 mg, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Tucker_1981, iv, 195 mg, ID3|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -55215,17 +55940,23 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.751942,
-            0.785168,
-            0.79
+            16.1619987,
+            2.297742,
+            1.19590509,
+            0.5334801,
+            0.163781613,
+            0.0761396,
+            0.04153956,
+            0.0135673005
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Concentration (mass)",
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Tucker_1981, iv 195 mg, Urine, n=4|Time",
+          "Path": "Tucker_1981, iv, 195 mg, ID3|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -55233,9 +55964,14 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          5.0,
-          18.0,
-          60.0
+          0.25,
+          0.75,
+          1.25,
+          2.25,
+          4.25,
+          6.25,
+          8.25,
+          12.25
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -55395,7 +56131,7 @@
             0.0184051991
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -55430,7 +56166,7 @@
       }
     },
     {
-      "Name": "Pentikainen_1979, iv 390 mg, Urine, n=3",
+      "Name": "Pentikainen_1979, 390 mg iv, KL",
       "ExtendedProperties": [
         {
           "Name": "Molecule",
@@ -55444,12 +56180,12 @@
         },
         {
           "Name": "Organ",
-          "Value": "Kidney",
+          "Value": "Peripheral Venous Blood",
           "Type": "String"
         },
         {
           "Name": "Compartment",
-          "Value": "Urine",
+          "Value": "Plasma",
           "Type": "String"
         }
       ],
@@ -55457,7 +56193,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Pentikainen_1979, iv 390 mg, Urine, n=3|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Pentikainen_1979, 390 mg iv, KL|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -55465,24 +56201,34 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.610635,
-            0.825424,
-            0.919936,
-            0.955084,
-            0.969476,
-            0.976091,
-            0.986592,
-            0.99056,
-            0.995908,
-            0.999813
+            34.08634,
+            30.13736,
+            21.61318,
+            16.82609,
+            13.09929,
+            10.1977406,
+            7.40369225,
+            5.244328,
+            3.807353,
+            2.269689,
+            1.493109,
+            0.85065037,
+            0.528249,
+            0.3403928,
+            0.2175443,
+            0.1339902,
+            0.078883335,
+            0.05231147,
+            0.03512022
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Pentikainen_1979, iv 390 mg, Urine, n=3|Time",
+          "Path": "Pentikainen_1979, 390 mg iv, KL|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -55490,16 +56236,25 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
+          0.11,
+          0.13000001,
+          0.203389809,
+          0.25,
+          0.329999983,
+          0.4252696,
+          0.6101695,
+          0.850539267,
           1.0,
+          1.5,
           2.0,
+          3.0,
           4.0,
+          5.0,
           6.0,
+          7.0,
           8.0,
-          10.0,
-          12.0,
-          24.0,
-          32.0,
-          48.0
+          9.0,
+          10.0
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -55557,7 +56312,7 @@
             0.0550437
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -55669,13 +56424,8 @@
       }
     },
     {
-      "Name": "Tucker_1981, po 390 mg, fed, Urine, n=4",
+      "Name": "Tucker_1981, iv, 195 mg, ID2",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Tucker_1981, po 390 mg, fed, ",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -55688,12 +56438,12 @@
         },
         {
           "Name": "Organ",
-          "Value": "Kidney",
+          "Value": "Peripheral Venous Blood",
           "Type": "String"
         },
         {
           "Name": "Compartment",
-          "Value": "Urine",
+          "Value": "Plasma",
           "Type": "String"
         }
       ],
@@ -55701,7 +56451,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Tucker_1981, po 390 mg, fed, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Tucker_1981, iv, 195 mg, ID2|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -55709,16 +56459,23 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.31,
-            0.496
+            6.261,
+            2.531901,
+            1.607543,
+            0.841514945,
+            0.2608774,
+            0.0953909755,
+            0.044708278,
+            0.01840835
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Concentration (mass)",
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Tucker_1981, po 390 mg, fed, Urine, n=4|Time",
+          "Path": "Tucker_1981, iv, 195 mg, ID2|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -55726,8 +56483,14 @@
           "AuxiliaryType": "Undefined"
         },
         "Values": [
-          5.0,
-          36.0
+          0.25,
+          0.75,
+          1.25,
+          2.25,
+          4.25,
+          6.25,
+          8.25,
+          12.25
         ],
         "Dimension": "Time",
         "Unit": "h"
@@ -55785,7 +56548,7 @@
             0.08586639
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "µg/ml"
+          "Unit": "mg/l"
         }
       ],
       "BaseGrid": {
@@ -55814,13 +56577,8 @@
       }
     },
     {
-      "Name": "Tucker_1981, po 1170 mg, fed, Urine, n=4",
+      "Name": "Wang_2008, po 390 mg, Urine, n=6",
       "ExtendedProperties": [
-        {
-          "Name": "Sheet",
-          "Value": "Tucker_1981, po 1170 mg, fed,",
-          "Type": "String"
-        },
         {
           "Name": "Molecule",
           "Value": "Metformin",
@@ -55846,7 +56604,7 @@
         {
           "Name": "Measurement",
           "QuantityInfo": {
-            "Path": "Tucker_1981, po 1170 mg, fed, Urine, n=4|ObservedData|Kidney|Urine|Metformin|Measurement"
+            "Path": "Wang_2008, po 390 mg, Urine, n=6|ObservedData|Kidney|Urine|Metformin|Measurement"
           },
           "DataInfo": {
             "Origin": "Observation",
@@ -55854,15 +56612,1575 @@
             "MolWeight": 129.1636
           },
           "Values": [
-            0.379
+            0.482
           ],
-          "Dimension": "Dimensionless"
+          "Dimension": "Fraction"
         }
       ],
       "BaseGrid": {
         "Name": "Time",
         "QuantityInfo": {
-          "Path": "Tucker_1981, po 1170 mg, fed, Urine, n=4|Time",
+          "Path": "Wang_2008, po 390 mg, Urine, n=6|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          170.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Boehringer_2018, po 390 mg, solution, Urine, n=13",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Boehringer_2018, po 390 mg, solution, Urine, n=13|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.2720745,
+            0.4668131,
+            0.5310118,
+            0.5651665,
+            0.542113
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Boehringer_2018, po 390 mg, solution, Urine, n=13|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          4.0,
+          8.0,
+          12.0,
+          24.0,
+          36.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, po 390 mg, Urine, n=5",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, po 390 mg, Urine, n=5|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.0653806,
+            0.154642,
+            0.302034,
+            0.367992,
+            0.414497,
+            0.439922,
+            0.455292,
+            0.497214,
+            0.506129,
+            0.511972
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, po 390 mg, Urine, n=5|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          1.0,
+          2.0,
+          4.0,
+          6.0,
+          8.0,
+          10.0,
+          12.0,
+          24.0,
+          32.0,
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, 390 mg iv, SR",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Peripheral Venous Blood",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Plasma",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, 390 mg iv, SR|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            31.77493,
+            28.55146,
+            21.0575,
+            14.66123,
+            9.877333,
+            7.40568542,
+            5.198791,
+            3.913944,
+            2.647712,
+            1.960812,
+            1.1532979,
+            0.6727811,
+            0.5149122,
+            0.3892533,
+            0.2699038,
+            0.1561592,
+            0.1146989,
+            0.07569979,
+            0.0360973
+          ],
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, 390 mg iv, SR|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          0.1845928,
+          0.2210643,
+          0.2572742,
+          0.330021,
+          0.4667974,
+          0.6220222,
+          0.841233,
+          1.0,
+          1.5,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          7.0,
+          8.0,
+          9.0,
+          10.0,
+          12.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, iv, Urine_KL",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, iv, Urine_KL|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            1.011
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, iv, Urine_KL|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, iv, Urine_PP",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, iv, Urine_PP|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            1.003
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, iv, Urine_PP|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, iv, Urine_SR",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, iv, Urine_SR|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.984
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, iv, Urine_SR|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, po, Urine_KL",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, po, Urine_KL|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.664
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, po, Urine_KL|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, po, Urine_PP",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, po, Urine_PP|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.485
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, po, Urine_PP|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, po, Urine_RL",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, po, Urine_RL|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.394
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, po, Urine_RL|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, po, Urine_SR",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, po, Urine_SR|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.611
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, po, Urine_SR|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, po, Urine_TK",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, po, Urine_TK|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.427
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, po, Urine_TK|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, 390 mg po, KL",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Peripheral Venous Blood",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Plasma",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, 390 mg po, KL|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            1.12584,
+            1.2475,
+            1.42259,
+            1.64236,
+            1.72527993,
+            1.55703008,
+            1.35422,
+            1.04996,
+            0.824144,
+            0.574302,
+            0.516172,
+            0.434438974,
+            0.198365
+          ],
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, 390 mg po, KL|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          0.62037,
+          0.833333,
+          1.11111009,
+          1.57407,
+          2.06481,
+          3.03704,
+          4.09259,
+          5.08332968,
+          6.08332968,
+          7.97222,
+          9.08333,
+          10.0926008,
+          12.1111
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, 390 mg po, PP",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Peripheral Venous Blood",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Plasma",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, 390 mg po, PP|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            1.701434,
+            1.6944561,
+            1.516508,
+            1.40838408,
+            0.9338042,
+            0.7510507,
+            0.5518491,
+            0.337025,
+            0.1710781,
+            0.1088636,
+            0.0819864
+          ],
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, 390 mg po, PP|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          0.75,
+          1.0,
+          1.5,
+          2.0,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          8.0,
+          10.0,
+          12.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, 390 mg po, RL",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Peripheral Venous Blood",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Plasma",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, 390 mg po, RL|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.853763044,
+            0.957648039,
+            0.843010962,
+            0.658679,
+            0.417389,
+            0.374995023,
+            0.327347,
+            0.16009,
+            0.08640189,
+            0.0655742958
+          ],
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, 390 mg po, RL|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          0.75,
+          1.0,
+          1.5,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          8.0,
+          10.0,
+          12.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, 390 mg po, SR",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Peripheral Venous Blood",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Plasma",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, 390 mg po, SR|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            1.44376993,
+            1.6681,
+            1.76731,
+            1.59408,
+            1.42014,
+            1.04644,
+            0.87269,
+            0.599484,
+            0.542959034,
+            0.443561,
+            0.199197009
+          ],
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, 390 mg po, SR|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          0.995434,
+          1.52511,
+          2.07306,
+          3.07763,
+          4.04566,
+          5.00457,
+          6.0,
+          7.80822,
+          9.02283,
+          10.0365,
+          11.9543
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Pentikainen_1979, 390 mg po, TK",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Peripheral Venous Blood",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Plasma",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Pentikainen_1979, 390 mg po, TK|ObservedData|Peripheral Venous Blood|Plasma|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.63153404,
+            0.873275,
+            0.943511,
+            0.949374,
+            0.873225033,
+            0.698591,
+            0.614214,
+            0.49682,
+            0.339548975,
+            0.18438
+          ],
+          "Dimension": "Concentration (mass)",
+          "Unit": "mg/l"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Pentikainen_1979, 390 mg po, TK|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          0.75,
+          1.0,
+          1.5,
+          3.0,
+          4.0,
+          5.0,
+          6.0,
+          8.0,
+          10.0,
+          12.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Sambol_1995, po 662.9 mg, Urine, n=6",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Sambol_1995, po 662.9 mg, Urine, n=6|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.436
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Sambol_1995, po 662.9 mg, Urine, n=6|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          72.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Sambol_1996a, po 1988.745 mg, Urine, n=9",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Sambol_1996a, po 1988.745 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.2478824
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Sambol_1996a, po 1988.745 mg, Urine, n=9|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Sambol_1996a, po 1325.8 mg, Urine, n=9",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Sambol_1996a, po 1325.8 mg, Urine, n=9|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.2856471
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Sambol_1996a, po 1325.8 mg, Urine, n=9|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Sambol_1996b, po 662.9 mg, fed, Urine, n=21",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Sambol_1996b, po 662.9 mg, fed, Urine, n=21|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.325
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Sambol_1996b, po 662.9 mg, fed, Urine, n=21|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          48.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Tucker_1981, iv, Urine, ID1",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Tucker_1981, iv, Urine, ID1|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.737
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Tucker_1981, iv, Urine, ID1|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          72.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Tucker_1981, iv, Urine, ID2",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Tucker_1981, iv, Urine, ID2|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.839
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Tucker_1981, iv, Urine, ID2|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          72.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Tucker_1981, iv, Urine, ID3",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Tucker_1981, iv, Urine, ID3|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.818
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Tucker_1981, iv, Urine, ID3|Time",
+          "Type": "Time"
+        },
+        "DataInfo": {
+          "Origin": "BaseGrid",
+          "AuxiliaryType": "Undefined"
+        },
+        "Values": [
+          72.0
+        ],
+        "Dimension": "Time",
+        "Unit": "h"
+      }
+    },
+    {
+      "Name": "Tucker_1981, iv, Urine, ID4",
+      "ExtendedProperties": [
+        {
+          "Name": "Molecule",
+          "Value": "Metformin",
+          "Type": "String"
+        },
+        {
+          "Name": "Species",
+          "Value": "Human",
+          "Type": "String"
+        },
+        {
+          "Name": "Organ",
+          "Value": "Kidney",
+          "Type": "String"
+        },
+        {
+          "Name": "Compartment",
+          "Value": "Urine",
+          "Type": "String"
+        }
+      ],
+      "Columns": [
+        {
+          "Name": "Measurement",
+          "QuantityInfo": {
+            "Path": "Tucker_1981, iv, Urine, ID4|ObservedData|Kidney|Urine|Metformin|Measurement"
+          },
+          "DataInfo": {
+            "Origin": "Observation",
+            "AuxiliaryType": "Undefined",
+            "MolWeight": 129.1636
+          },
+          "Values": [
+            0.763
+          ],
+          "Dimension": "Fraction"
+        }
+      ],
+      "BaseGrid": {
+        "Name": "Time",
+        "QuantityInfo": {
+          "Path": "Tucker_1981, iv, Urine, ID4|Time",
           "Type": "Time"
         },
         "DataInfo": {
@@ -55897,9 +58215,25 @@
       "Name": "Pentikainen 1979",
       "Classifiables": [
         "Pentikainen_1979, po 390 mg, Plasma, n=5",
-        "Pentikainen_1979, po 390 mg, Urine, n=5",
+        "Pentikainen_1979, 390 mg iv, PP",
         "Pentikainen_1979, iv 390 mg, Plasma, n=3",
-        "Pentikainen_1979, iv 390 mg, Urine, n=3"
+        "Pentikainen_1979, iv 390 mg, Urine, n=3",
+        "Pentikainen_1979, 390 mg iv, KL",
+        "Pentikainen_1979, po 390 mg, Urine, n=5",
+        "Pentikainen_1979, 390 mg iv, SR",
+        "Pentikainen_1979, iv, Urine_KL",
+        "Pentikainen_1979, iv, Urine_PP",
+        "Pentikainen_1979, iv, Urine_SR",
+        "Pentikainen_1979, po, Urine_KL",
+        "Pentikainen_1979, po, Urine_PP",
+        "Pentikainen_1979, po, Urine_RL",
+        "Pentikainen_1979, po, Urine_SR",
+        "Pentikainen_1979, po, Urine_TK",
+        "Pentikainen_1979, 390 mg po, KL",
+        "Pentikainen_1979, 390 mg po, PP",
+        "Pentikainen_1979, 390 mg po, RL",
+        "Pentikainen_1979, 390 mg po, SR",
+        "Pentikainen_1979, 390 mg po, TK"
       ]
     },
     {
@@ -55912,9 +58246,9 @@
     {
       "Name": "Sambol 1995",
       "Classifiables": [
-        "Sambol_1995, po 662.9 mg, Urine, n=6",
         "Sambol_1995, po, 662.9 mg, Whole blood, n=6",
-        "Sambol_1995, po, 662.9 mg, Plasma, n=6"
+        "Sambol_1995, po, 662.9 mg, Plasma, n=6",
+        "Sambol_1995, po 662.9 mg, Urine, n=6"
       ]
     },
     {
@@ -55927,12 +58261,20 @@
     {
       "Name": "Tucker 1981",
       "Classifiables": [
+        "Tucker_1981, iv, 195 mg, ID1",
+        "Tucker_1981, iv, 195 mg, ID4",
+        "Tucker_1981, po 1170 mg, fed, Urine, n=4",
         "Tucker_1981, iv 195 mg, Plasma, n=4",
         "Tucker_1981, iv 195 mg, Urine, n=4",
-        "Tucker_1981, po 390 mg, fed, Plasma, n=4",
         "Tucker_1981, po 390 mg, fed, Urine, n=4",
+        "Tucker_1981, iv, 195 mg, ID3",
+        "Tucker_1981, po 390 mg, fed, Plasma, n=4",
+        "Tucker_1981, iv, 195 mg, ID2",
         "Tucker_1981, po 1170 mg, fed, Plasma, n=4",
-        "Tucker_1981, po 1170 mg, fed, Urine, n=4"
+        "Tucker_1981, iv, Urine, ID1",
+        "Tucker_1981, iv, Urine, ID2",
+        "Tucker_1981, iv, Urine, ID3",
+        "Tucker_1981, iv, Urine, ID4"
       ]
     },
     {
@@ -55945,13 +58287,13 @@
     {
       "Name": "Sambol 1996a",
       "Classifiables": [
-        "Sambol_1996a, po 1325.8 mg, Plasma, n=9",
         "Sambol_1996a, po 662.9 mg, Urine, n=9",
-        "Sambol_1996a, po 1988.745 mg, Urine, n=9",
+        "Sambol_1996a, po 1325.8 mg, Plasma, n=9",
         "Sambol_1996a, po 662.9 mg, Plasma, n=9",
-        "Sambol_1996a, po 1325.8 mg, Urine, n=9",
         "Sambol_1996a, po 1988.745 mg, Plasma, n=9",
-        "Sambol_1996a, po 662.9 mg tid, Plasma, n=9"
+        "Sambol_1996a, po 662.9 mg tid, Plasma, n=9",
+        "Sambol_1996a, po 1988.745 mg, Urine, n=9",
+        "Sambol_1996a, po 1325.8 mg, Urine, n=9"
       ]
     },
     {
@@ -55964,21 +58306,21 @@
     {
       "Name": "Boehringer 2018",
       "Classifiables": [
-        "Boehringer_2018, po 390 mg, solution, Urine, n=13",
-        "Boehringer_2018, po 390 mg, solution, Plasma, n=13"
+        "Boehringer_2018, po 390 mg, solution, Plasma, n=13",
+        "Boehringer_2018, po 390 mg, solution, Urine, n=13"
       ]
     },
     {
       "Name": "Sambol 1996b",
       "Classifiables": [
         "Sambol_1996b, po 390 mg, Plasma, n=24",
-        "Sambol_1996b, po 662.9 mg, Urine, n=21",
-        "Sambol_1996b, po 662.9 mg, Plasma, n=24",
-        "Sambol_1996b, po 662.9 mg, solution, Urine, n=24",
-        "Sambol_1996b, po 662.9 mg, fed, Urine, n=21",
-        "Sambol_1996b, po 662.9 mg, fed, Plasma, n=24",
         "Sambol_1996b, po 390 mg, Urine, n=21",
-        "Sambol_1996b, po 662.9 mg, solution, Plasma, n=24"
+        "Sambol_1996b, po 662.9 mg, Urine, n=21",
+        "Sambol_1996b, po 662.9 mg, solution, Urine, n=24",
+        "Sambol_1996b, po 662.9 mg, Plasma, n=24",
+        "Sambol_1996b, po 662.9 mg, fed, Plasma, n=24",
+        "Sambol_1996b, po 662.9 mg, solution, Plasma, n=24",
+        "Sambol_1996b, po 662.9 mg, fed, Urine, n=21"
       ]
     },
     {
@@ -56077,8 +58419,8 @@
     {
       "Name": "Somogyi 1987",
       "Classifiables": [
-        "Somogyi_1987, po 195 mg, fed, Plasma, n=7",
-        "Somogyi_1987, po 195 mg, fed, Urine, n=7"
+        "Somogyi_1987, po 195 mg, fed, Urine, n=7",
+        "Somogyi_1987, po 195 mg, fed, Plasma, n=7"
       ]
     },
     {
@@ -56099,30 +58441,30 @@
     {
       "Name": "metformin model verification po",
       "Classifiables": [
+        "po  500 mg, Tucker 1981, n=4, tab, fed",
+        "po 1500 mg, Tucker 1981, n=4, tab, fed",
         "po  250 mg, Somogyi 1987, n=7, tab, fed",
         "po  500 mg, Caille 1993, n=24, tab, fed",
         "po  500 mg, DiCicco 2000, n=16, tab, fed",
         "po  500 mg, Gusler 2001, n=14, tab, fed",
-        "po  500 mg, Jang 2016, n=20, tab, fast",
-        "po  500 mg, Kim 2014, n=23, tab, fast",
-        "po  500 mg, Manitpisitkul 2014, n=18, tab, fast",
-        "po  500 mg, Najib 2002, n=24, tab, fast",
-        "po  500 mg, Oh 2016, n=20, tab, fast",
-        "po  500 mg, Pentikainen 1979, n=5, tab, fast",
-        "po  500 mg, Tucker 1981, n=4, tab, fed",
         "po  750 mg, Cho 2011, n=16, tab, fast",
         "po  750 mg, Cho 2014, n=12, tab, fast",
-        "po  750 mg, Ding 2014, n=20, tab, fast",
-        "po  850 mg, Hibma 2016, n=12, tab, fast",
-        "po  850 mg, Morrissey 2016, n=12, tab, fast",
         "po  850 mg, Robert 2003, WholeBlood, n=6, tab, fed",
+        "po  850 mg, Sambol 1996a, n=9, tab, fast",
         "po  850 mg, Sambol 1995, WholeBlood, n=6, tab, fast",
-        "po 1500 mg, Tucker 1981, n=4, tab, fed",
-        "po 1000 mg, Johansson 2014, n=14, tab, fast",
         "po 1000 mg, Gan 2016, n=27, tab, fast",
+        "po 1000 mg, Johansson 2014, n=14, tab, fast",
+        "po  850 mg, Morrissey 2016, n=12, tab, fast",
+        "po  850 mg, Hibma 2016, n=12, tab, fast",
         "po  850 mg, Chen 2009, n=14, tab, fast",
         "po  850 mg tid, Sambol 1996a, n=9, tab, fast",
-        "po  850 mg, Sambol 1996a, n=9, tab, fast",
+        "po  750 mg, Ding 2014, n=20, tab, fast",
+        "po  500 mg, Pentikainen 1979, n=5, tab, fast",
+        "po  500 mg, Oh 2016, n=20, tab, fast",
+        "po  500 mg, Najib 2002, n=24, tab, fast",
+        "po  500 mg, Manitpisitkul 2014, n=18, tab, fast",
+        "po  500 mg, Kim 2014, n=23, tab, fast",
+        "po  500 mg, Jang 2016, n=20, tab, fast",
         "po  500 mg, Sambol 1996b, n=24, tab, fast",
         "po  500 mg, Wang 2008, n=6, tab, fast"
       ]
@@ -56145,8 +58487,8 @@
       "Name": "metformin model building iv",
       "Classifiables": [
         "iv  250 mg, Tucker 1981, n=4",
-        "iv 1000 mg, Sirtori 1978, n=5",
-        "iv   0.0014 mg, Gormsen 2016, n=4"
+        "iv   0.0014 mg, Gormsen 2016, n=4",
+        "iv 1000 mg, Sirtori 1978, n=5"
       ]
     },
     {
