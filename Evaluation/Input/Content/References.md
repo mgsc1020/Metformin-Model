@@ -29,6 +29,8 @@ of substrates, inhibitors and inducers. https://www.fda.gov/drugs/drug-interacti
 
 **Gusler 2001** Gusler G, Gorsline J, Levy G, et al (2001) Pharmacokinetics of metformin gastric-retentive tablets in healthy volunteers. J Clin Pharmacol 41:655–661. https://doi.org/10.1177/00912700122010546
 
+**Hanke 2020** Hanke N, Türk D, Selzer D, et al (2020) A Comprehensive Whole-Body Physiologically Based Pharmacokinetic Drug-Drug-Gene Interaction Model of Metformin and Cimetidine in Healthy Adults and Renally Impaired Individuals. Clin Pharmacokinet. 59:1419-1431. doi: 10.1007/s40262-020-00896-w. 
+
 **Hibma 2016** Hibma JE, Zur AA, Castro RA, et al (2016) The Effect of Famotidine, a MATE1-Selective Inhibitor, on the Pharmacokinetics and Pharmacodynamics of Metformin. Clin Pharmacokinet 55:711–721. https://doi.org/10.1007/s40262-015-0346-3
 
 **Jang 2016** Jang K, Chung H, Yoon J-S, et al (2016) Pharmacokinetics, Safety, and Tolerability of Metformin in Healthy Elderly Subjects. J Clin Pharmacol 56:1104–1110. https://doi.org/10.1002/jcph.699
