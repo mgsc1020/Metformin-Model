@@ -51,7 +51,7 @@ The following publications were used for model building (training dataset) and m
 | 750 <sup>(b)</sup>| po, tablet, fasted, bid |plasma|test|[Ding 2014](#5-references)|
 | 850| po, sol, fasted, sd |plasma, excretion into urine|training|[Sambol 1996b](#5-references)|
 | 850 <sub>(c)<sub>| po, tablet, fasted, bid |plasma|test|[Chen 2009](#5-references)|
-| 850| po, tablet, fasted, sd |plasma|test|[Morissey 2016](#5-references)|
+| 850| po, tablet, fasted, sd |plasma|test|[Morrissey 2016](#5-references)|
 | 850| po, tablet, fed, sd |blood, plasma|test|[Robert 2003 ](#5-references)|
 | 850| po, tablet, fasted, sd |blood, plasma, excretion into urine|test|[Sambol 1995](#5-references)|
 | 850| po, tablet, fasted, sd |plasma, excretion into urine|test|[Sambol 1996a](#5-references)|
