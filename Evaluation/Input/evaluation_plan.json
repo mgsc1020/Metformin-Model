@@ -13,7 +13,7 @@
             "ChartWidth": 500,
             "ChartHeight": 400,
             "Fonts": {
-                "AxisSize": 11,
+                "AxisSize": 9,
                 "LegendSize": 7,
                 "OriginSize": 9,
                 "FontFamilyName": "Arial",

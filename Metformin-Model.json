@@ -45985,7 +45985,7 @@
             "BackColor": "#00FFFFFF",
             "DiagramBackColor": "#FFFFFF"
           },
-          "Title": "Metformin - po (tab) 850 mg_Morrisey 2016",
+          "Title": "Metformin - po (tab) 850 mg_Morrissey 2016",
           "OriginText": "Metformin-Model V11\npo  850 mg, Morrissey 2016, n=12, tab, fast\n2024-11-14 16:28"
         }
       ]
@@ -50681,7 +50681,7 @@
             0.0456359
           ],
           "Dimension": "Concentration (mass)",
-          "Unit": "mg/l"
+          "Unit": "µg/ml"
         }
       ],
       "BaseGrid": {
