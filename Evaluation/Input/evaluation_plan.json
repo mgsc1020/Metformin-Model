@@ -3,7 +3,7 @@
     "Projects": [
         {
             "Id": "Metformin",
-            "Path": "../../Metformin-Model V11.json",
+            "Path": "../../Metformin-Model.json",
             "BuildingBlocks": []
         }
     ],
