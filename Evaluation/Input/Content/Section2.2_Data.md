@@ -1,4 +1,4 @@
-### In vitro and physicochemical data
+### In vitro and physicochemical data <a id="invitro-and-physico-chemical-data"></a>
 
 A literature search was performed to collect available information on physicochemical properties of metformin. The obtained information from literature is summarized in the table below, and was used for model building. Final model parameters are stated in [Section 3.1](#31-metformin-final-input-parameters).
 
@@ -17,7 +17,7 @@ A literature search was performed to collect available information on physicoche
 | Tablet fasted Weibull time            | min      |  7.90     | [Block 2008](#5-references)                 | Dissolution time (50% dissolved)                             |
 
 
-### Clinical data
+### Clinical data <a id="clinical-data"></a>
 
 A literature search was performed to collect available clinical data on metformin in adults. 
 
