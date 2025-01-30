@@ -32,7 +32,7 @@ The OCT1 expression profiles are based on Microarray expression data ([Kolesniko
 
 * OCT2
 
-The OCT2 expression profiles are based on Expressed Sequece Tags (EST) ([NCBI 2019](#5-references)). Transporter activity was described as saturable process following Michaelis-Menten kinetics, were the `Km` was taken from literature and `kcat` was optimized based on clinical data (see [Section 2.3.4](#model-parameters-and-assumptions-identification)).
+The OCT2 expression profiles are based on Expressed Sequece Tags (EST) ([NCBI 2019](#5-references)). Transporter activity was described as saturable process following Michaelis-Menten kinetics, where the `Km` was taken from literature and `kcat` was optimized based on clinical data (see [Section 2.3.4](#model-parameters-and-assumptions-identification)).
 
 * MATE1
 
