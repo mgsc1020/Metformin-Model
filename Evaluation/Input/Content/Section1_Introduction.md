@@ -1,6 +1,6 @@
 The presented model building and evaluation report evaluates the performance of a PBPK model for metformin in healthy adults.
 
-The herein presented model was developed and published by Hanke et al. [Hanke 2020](#5-references) and adjusted later on to PK-Sim V11 by re-optimizing OCT2.
+The herein presented model was developed and published by Hanke et al. ([Hanke 2020](#5-references)) and adjusted later on to PK-Sim V11 by re-optimizing OCT2.
 
 Metformin is widely used as first-line treatment of type 2 diabetes. It is a highly hydrophilic compound, positively
 charged at physiological pH and depends on active transport for its absorption, distribution and
