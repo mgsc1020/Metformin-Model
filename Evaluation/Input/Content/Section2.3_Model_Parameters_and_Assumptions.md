@@ -19,7 +19,7 @@ After testing the available organ-plasma partition coefficient and cell permeabi
 ### Metabolism and Elimination<a id="model-parameters-and-assumptions-metabolism"></a>
 
 Following its absorption, metformin is not bound to plasma proteins, not metabolized, and not secreted to bile. Metformin is excreted unchanged with the urine by passive glomerular filtration and active renal secretion through the sequential action of organic cation transporter 2 (OCT2) and multidrug and toxin extrusion protein 1 (MATE1).
-The transport proteins involved in metformin PK were implemented in the model via Michaelis-Menten kinetics as described below: 
+The transport proteins involved in metformin PK were implemented in the model as described below: 
 
 * PMAT
 
