@@ -36,7 +36,7 @@ The OCT2 expression profiles are based on Expressed Sequece Tags (EST) ([NCBI 20
 
 * MATE1
 
-The MATE1 expression profiles assumed 100% expression in the Kidney ([Otsuka 2005](#5-references) and [Masuda 2006](#5-references)). Transporter activity was described as saturable process following Michaelis-Menten kinetics, were the `Km` was taken from literature and `kcat` was optimized based on clinical data (see [Section 2.3.4](#model-parameters-and-assumptions-identification)).
+The MATE1 expression profiles assumed 100% expression in the Kidney ([Otsuka 2005](#5-references) and [Masuda 2006](#5-references)). Transporter activity was described as saturable process following Michaelis-Menten kinetics, where the `Km` was taken from literature and `kcat` was optimized based on clinical data (see [Section 2.3.4](#model-parameters-and-assumptions-identification)).
 
 Additionally, passive renal clearance by glomerular filtration was implemented and the `GFR fraction` was set to 1. In addition, fraction of bile that was continuously released was set to 1 (`EHC continuous fraction`)
 
