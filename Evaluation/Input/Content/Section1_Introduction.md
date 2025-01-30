@@ -5,7 +5,7 @@ The herein presented model was developed and published by Hanke et al. ([Hanke 2
 Metformin is widely used as first-line treatment of type 2 diabetes. It is a highly hydrophilic compound, positively
 charged at physiological pH and depends on active transport for its absorption, distribution and
 excretion. The absorption of metformin is saturable and reported to be restricted to the upper
-intestine [Vidon 1988](#5-references). The excretion of metformin is mainly mediated via the sequential action of OCT2 and
+intestine ([Vidon 1988](#5-references)). The excretion of metformin is mainly mediated via the sequential action of OCT2 and
 MATE in the kidney, with a moderate contribution of renal glomerular filtration (approximately
 20 %). Metformin is recommended by the FDA as OCT2/MATE victim drug for the use in clinical
 DDI studies and drug labeling [FDA 2017](#5-references).
