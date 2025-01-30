@@ -23,7 +23,7 @@ The transport proteins involved in metformin PK were implemented in the model vi
 
 * PMAT
 
-The PMAT expression profiles are based on high-sensitive real-time RT-PCR ([Nishimura 2005](#5-references)). Metabolic enzyme activity was described as saturable process following Hill kinetics, were the `PMAT Hill` was taken from literature and `Km`and `kcat` were optimized based on clinical data (see [Section 2.3.4](#model-parameters-and-assumptions-identification)).
+The PMAT expression profiles are based on high-sensitive real-time RT-PCR ([Nishimura 2005](#5-references)). Metabolic enzyme activity was described as saturable process following Hill kinetics, where the `PMAT Hill` was taken from literature and `Km`and `kcat` where optimized based on clinical data (see [Section 2.3.4](#model-parameters-and-assumptions-identification)).
 
 * OCT1
 
