@@ -10,9 +10,10 @@ A literature search was performed to collect available information on physicoche
 | Solubility (pH 6.8)     | g/L    |  350.90      | [Desai 2014](#5-references)         | Solubility |
 | logP                    |          | -1.43     | [Graham 2011](#5-references)| Partition coefficient between octanol and water |
 | fu                      | %        | 100      | [Tucker 1981](#5-references), [Pentikäinen 1979](#5-references), [Sirtori 1978](#5-references)            | Fraction unbound                |                       
-| K<sub>m</sub> OCT1     | µmol/L   | 1180.00     | [Chen 2009](#5-references) | BCRP Michaelis-Menten constant            |
-| K<sub>m</sub> OCT2      | µmol/L   | 810.00     | [Chen 2009](#5-references) | OAT3 Michaelis-Menten constant            |
-| K<sub>m</sub> MATE1      | µmol/L   | 283.00    | [Yin 2016](#5-references) | OATP2B1 Michaelis-Menten constant         |
+| PMAT Hill     |    | 3     | [Zhou 2007](#5-references) | PMAT Hill coefficient, Literature value = 2.64         |
+| K<sub>m</sub> OCT1     | µmol/L   | 1180.00     | [Chen 2009](#5-references) | OCT1 Michaelis-Menten constant            |
+| K<sub>m</sub> OCT2      | µmol/L   | 810.00     | [Chen 2009](#5-references) | OCT2 Michaelis-Menten constant            |
+| K<sub>m</sub> MATE1      | µmol/L   | 283.00    | [Yin 2016](#5-references) |  MATE1 Michaelis-Menten constant         |
 | Tablet fasted Weibull shape           | -        |  1.36      | [Block 2008](#5-references) | Dissolution profile shape |
 | Tablet fasted Weibull time            | min      |  7.90     | [Block 2008](#5-references)                 | Dissolution time (50% dissolved)                             |
 

@@ -98,4 +98,6 @@ digestive tract. Diabetes Research and Clinical Practice 4:223–229
 
 **Yin 2016** Yin J, Duan H, Wang J (2016) Impact of Substrate-Dependent Inhibition on Renal Organic Cation Transporters hOCT2 and hMATE1/2-K-Mediated Drug Transport and Intracellular Accumulation. J Pharmacol Exp Ther 359:401–410. https://doi.org/10.1124/jpet.116.236158
 
+**Zhou 2007** Zhou M, Xia L, Wang J (2007) Metformin Transport by a Newly Cloned Proton-Stimulated Organic Cation Transporter (Plasma Membrane Monoamine Transporter) Expressed in Human Intestine. Drug Metab Dispos 35:1956–1962 https://doi: 10.1124/dmd.107.015495.
+
 **Zhou 2009** Zhou SF, Zhou ZW, Yang LP, Cai JP (2009) Substrates, inducers, inhibitors and structure-activity relationships of human cytochrome P450 2C9 and implications in drug development. Current Medicinal Chemistry 16:3480–3675. https://doi.org/10.2174/092986709789057635

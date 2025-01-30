@@ -3,7 +3,7 @@ The general concept of building a PBPK model has previously been described by Ku
 Transporters and metabolizing enzymes relevant to the pharmacokinetics of the modeled drugs were
 implemented in agreement with current literature, utilizing the PK-Sim® expression database ([PK-Sim Ontogeny Database Version 7.3](#5-references)) or otherwise referenced for the specific process.
 
-A model was built based on clinical data from studies with intravenous and oral administration of metformin. The studies reported individual or mean plasma concentrations of metformin. From the 39 studies used for model building and evaluatio, 22 studies reported the corresponding metformin fraction excreted to urine. For the studies reporting intravenous administration, metformin was administered in doses of 0.001 to 1000 mg. For the studies reporting oral administration, metformin was administered in doses of 0.001–2550 mg.
+A model was built based on clinical data from studies with intravenous and oral administration of metformin. The studies reported individual or mean plasma concentrations of metformin,  and some of the studies reported fraction excreted to urine. For the studies reporting intravenous administration, metformin was administered in doses of 0.001 to 1000 mg. For the studies reporting oral administration, metformin was administered in doses of 0.001–2550 mg.
 
 Virtual mean individuals were generated for each study according to the published demographic information, with corresponding age, weight, height, sex, ethnicity, hematocrit and GFR, if available. If no information was provided, a default virtual individual was applied (30 years of age, male, European, mean weight, height, hematocrit and GFR characteristics from the PK-Sim® population database).
 
