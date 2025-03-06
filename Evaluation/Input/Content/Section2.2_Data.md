@@ -66,8 +66,8 @@ The following publications were used for model building (training dataset) and m
 | 1700| po, tablet, fasted, sd |plasma, excretion into urine|training|[Sambol 1996a](#5-references)|
 | 2550| po, tablet, fasted, sd |plasma, excretion into urine|training|[Sambol 1996a](#5-references)|
 
-<sup>(a)</sup> first dose 750 mg, second dose (500 mg)
+<sup>(a)</sup> first dose 750 mg, second dose 500 mg
 
-<sup>(b)</sup> first dose 1000 mg, second dose (750 mg)
+<sup>(b)</sup> first dose 1000 mg, second dose 750 mg
 
-<sup>(c)</sup> first dose 1000 mg, second dose (850 mg)
+<sup>(c)</sup> first dose 1000 mg, second dose 850 mg
