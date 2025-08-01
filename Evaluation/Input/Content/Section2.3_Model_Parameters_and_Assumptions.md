@@ -1,7 +1,7 @@
 ### Absorption<a id="model-parameters-and-assumptions-absorption"></a>
 
 The parameter value for `Specific intestinal permeability` was optimized based on clinical oral data, see [Section 2.3.4](#model-parameters-and-assumptions-identification). The saturable
-absorption is implemented via PMAT and OCT1 in the small intestine. As late absorption of orally administered metformin is neither consistent with the reported plasma concentration time-profiles nor with the incomplete absorption of metformin, the relative expression of PMAT and OCT1 in the large intestinal mucosa was set to zero. Additionally, no information regarding active transport processes at the basolateral side of the intestinal mucosa could be obtained, therefore, the passive  basolateral permeability `(P (intracellular -> interstitial)` was optimized, see [Section 2.3.4](#model-parameters-and-assumptions-identification).
+absorption is implemented via PMAT and OCT1 in the small intestine. As late absorption of orally administered metformin is neither consistent with the reported plasma concentration time-profiles nor with the incomplete absorption of metformin, the relative expression of PMAT and OCT1 in the large intestinal mucosa was set to zero. Additionally, no information regarding active transport processes at the basolateral side of the intestinal mucosa could be obtained, therefore, the passive  basolateral permeability `(P (intracellular -> interstitial)` was optimized see [Section 2.3.4](#model-parameters-and-assumptions-identification).
 
 The measured solubility of metformin hydrochloride
 in a phosphate buffer at pH 6.8 was used in the model (see [Section 2.2.1](#invitro-and-physico-chemical-data)).
@@ -14,7 +14,9 @@ Metformin is not bound to plasma proteins (fu = 100 %) (see [Section 2.2.1](#inv
 
 An important parameter influencing the resulting volume of distribution is lipophilicity. The reported experimental logP of -1.43 was used in this model (see [Section 2.2.1](#in-vitro-and-physicochemical-data)). 
 
-After testing the available organ-plasma partition coefficient and cell permeability calculation methods built in PK-Sim®, observed clinical data was best described by choosing the partition coefficient calculation by `PK-SIM Standard` and cellular permeability calculation by `Charged dependent Schmitt normalized to PK-SIM`.
+After testing the available organ-plasma partition coefficient and cell permeability calculation methods built in PK-Sim®, observed clinical data was best described by choosing the partition coefficient calculation by `PK-SIM Standard` and cellular permeability calculation by `PK-SIM Standard`.
+
+The permeability coefficients for liver, kidney and brain (i.e., (`(P (intracellular -> interstitial) liver periportal`, `(P (intracellular -> interstitial) liver pericentral` and (`(P (intracellular -> interstitial) kidney`) were optimized to avoid tissue accumulation and to capture observed PK profiles [Section 2.3.4](#model-parameters-and-assumptions-identification). 
 
 ### Metabolism and Elimination<a id="model-parameters-and-assumptions-metabolism"></a>
 
@@ -42,20 +44,22 @@ Additionally, passive renal clearance by glomerular filtration was implemented a
 
 ### Automated Parameter Identification<a id="model-parameters-and-assumptions-identification"></a>
 
-The following parameters have been estimated in the model:
+This is the result of the final parameter identification.
 
-| Model Parameter                |
-| ------------------------------ | 
-| `Km` (PMAT)             | 
-| `kcat` (PMAT)             | 
-| `kcat` (OCT1)            |
-| `kcat` (OCT2)                    | 
-| `kcat` (MATE1)                    | 
-| `Specific intestinal permeability`| 
-| `Basolateral small intestinal permeability`| 
-| `Basolateral large intestinal permeability`| 
-| `Tablet dissolution fed Weibull Shape`|
-| `Tablet dissolution fed Weibull Time`|
+| Model Parameter      | Optimized Value | Unit |
+| -------------------- | --------------- | ---- |
+| `kcat` (PMAT)             | 76.47|1/min|
+| `Km` (PMAT)             |367.57 | µmol/l/min |
+| `kcat` (OCT1)            | 641.19 | 1/min |
+| `kcat` (OCT2)                    | 17479.74 | 1/min |
+| `kcat` (MATE1)                    | 165.69 | 1/min |
+| `P(intracellular-interstitial) Kidney`| 4.02E-06 | cm/min |
+| `P(intracellular-interstitial) Liver`|4.83E-05 | cm/min |
+| `P(intracellular-interstitial) Brain`|0.02 | cm/min |
+| `Specific intestinal permeability`| 8.49E-07 | cm/min |
+| `P(intracellular-interstitial) mucosa` (Basolateral intestinal permeability)| 2.25E-05 | cm/min |
+| `Tablet dissolution fed Weibull Shape`| 0.08 | - |
+| `Tablet dissolution fed Weibull Time`| 7.90 | min |
 
 
  
