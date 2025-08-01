@@ -43,6 +43,8 @@ of substrates, inhibitors and inducers. https://www.fda.gov/drugs/drug-interacti
 
 **Manitpisitkul 2014** Manitpisitkul P, Curtin CR, Shalayda K, et al (2014) Pharmacokinetic interactions between topiramate and pioglitazone and metformin. Epilepsy Res 108:1519–1532. https://doi.org/10.1016/j.eplepsyres.2014.08.013
 
+**Marathe 2000** Marathe PH, Wen Y, Norton J, Greene DS, Barbhaiya RH, Wilding IR. Effect of altered gastric emptying and gastrointestinal motility on metformin absorption. Br J Clin Pharmacol. 0:325-32. doi: 10.1046/j.1365-2125.2000.00264.x. 
+
 **Masuda 2006** Masuda S, Terada T, Yonezawa A, et al (2006) Identification and functional characterization of a new human kidney-specific H+/organic cation antiporter, kidney-specific multidrug and toxin extrusion 2. J Am Soc Nephrol 17:2127–2135. https://doi.org/10.1681/asn.2006030205
 
 **Meyer 2012** Meyer M, Schneckener S, Ludewig B, et al (2012) Using expression data for quantification of active processes in physiologically based pharmacokinetic modeling. Drug Metab Dispos 40:892–901. https://doi.org/10.1124/dmd.111.043174
