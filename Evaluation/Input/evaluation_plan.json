@@ -424,7 +424,7 @@
                         ]
                     },{
                         "Caption": "Metformin iv (model verification)",
-                        "Symbol": "Triangle",
+                        "Symbol": "Square",
                         "OutputMappings": [
                             {
                                 "Project": "Metformin",
