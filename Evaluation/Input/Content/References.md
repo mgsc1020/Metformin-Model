@@ -19,7 +19,7 @@
 **Ding 2014** Ding Y, Jia Y, Song Y, et al (2014) The effect of lansoprazole, an OCT inhibitor, on metformin pharmacokinetics in healthy subjects. Eur J Clin Pharmacol 70:141–146. https://doi.org/10.1007/s00228-013-1604-7
 
 **FDA 2017** US Food and Drug Administration (2017) Drug development and drug interactions: Table
-of substrates, inhibitors and inducers. https://www.fda.gov/drugs/drug-interactions/labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers
+of substrates, inhibitors and inducers. https://www.fda.gov/drugs/drug-interactions-labeling/drug-development-and-drug-interactions-table-substrates-inhibitors-and-inducers
 
 **Gan 2016** Gan L, Jiang X, Mendonza A, et al (2016) Pharmacokinetic drug-drug interaction assessment of LCZ696 (an angiotensin receptor neprilysin inhibitor) with omeprazole, metformin or levonorgestrel-ethinyl estradiol in healthy subjects. Clin Pharmacol Drug Dev 5:27–39. https://doi.org/10.1002/cpdd.181
 
@@ -100,6 +100,6 @@ digestive tract. Diabetes Research and Clinical Practice 4:223–229
 
 **Yin 2016** Yin J, Duan H, Wang J (2016) Impact of Substrate-Dependent Inhibition on Renal Organic Cation Transporters hOCT2 and hMATE1/2-K-Mediated Drug Transport and Intracellular Accumulation. J Pharmacol Exp Ther 359:401–410. https://doi.org/10.1124/jpet.116.236158
 
-**Zhou 2007** Zhou M, Xia L, Wang J (2007) Metformin Transport by a Newly Cloned Proton-Stimulated Organic Cation Transporter (Plasma Membrane Monoamine Transporter) Expressed in Human Intestine. Drug Metab Dispos 35:1956–1962 https://doi: 10.1124/dmd.107.015495.
+**Zhou 2007** Zhou M, Xia L, Wang J (2007) Metformin Transport by a Newly Cloned Proton-Stimulated Organic Cation Transporter (Plasma Membrane Monoamine Transporter) Expressed in Human Intestine. Drug Metab Dispos 35:1956–1962. https://doi.org/10.1124/dmd.107.015495
 
 **Zhou 2009** Zhou SF, Zhou ZW, Yang LP, Cai JP (2009) Substrates, inducers, inhibitors and structure-activity relationships of human cytochrome P450 2C9 and implications in drug development. Current Medicinal Chemistry 16:3480–3675. https://doi.org/10.2174/092986709789057635
