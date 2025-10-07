@@ -49,7 +49,7 @@ This is the result of the final parameter identification.
 | Model Parameter      | Optimized Value | Unit |
 | -------------------- | --------------- | ---- |
 | `kcat` (PMAT)             | 76.47|1/min|
-| `Km` (PMAT)             |367.57 | µmol/l/min |
+| `Km` (PMAT)             |367.57 | µmol/l |
 | `kcat` (OCT1)            | 641.19 | 1/min |
 | `kcat` (OCT2)                    | 17479.74 | 1/min |
 | `kcat` (MATE1)                    | 165.69 | 1/min |
